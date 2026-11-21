@@ -115,13 +115,13 @@ function interiorEp(t) {
   // cartão da cobrança (caderninho)
   const kc = Math.max(lin(t, ca + .8, ca + 1.1) * (1 - lin(t, ca + 3.0, ca + 3.3)), lin(t, co + 2.0, co + 2.3) * (1 - lin(t, co + 3.9, co + 4.2)));
   const segunda = t > co;
-  cartao(540, 560, 700, 380, kc, (c, w, h) => {
-    texto("CADERNINHO DA LOJA", 0, -h / 2 + 46, { tam: 38, cor: "#ff5a5f", borda: null });
-    c.fillStyle = "rgba(43,26,16,.2)"; c.fillRect(-w / 2 + 50, -80, w - 100, 4);
-    texto("AMIGO", -150, -20, { tam: 62, cor: OL, borda: null }); texto("R$ 100", 160, -20, { tam: 62, cor: "#e3342f", borda: null });
+  cartao(540, 440, 700, 280, kc, (c, w, h) => {
+    texto("CADERNINHO DA LOJA", 0, -h / 2 + 38, { tam: 38, cor: "#ff5a5f", borda: null });
+    c.fillStyle = "rgba(43,26,16,.2)"; c.fillRect(-w / 2 + 50, -66, w - 100, 4);
+    texto("AMIGO", -150, -14, { tam: 58, cor: OL, borda: null }); texto("R$ 100", 160, -14, { tam: 62, cor: "#e3342f", borda: null });
     const e = eob(lin(t, segunda ? co + 2.25 : ca + 2.0, segunda ? co + 2.5 : ca + 2.25));
-    c.save(); c.translate(0, 90); c.rotate(-.1); c.scale(Math.max(.001, e * (e < 1 ? 1.4 - .4 * e : 1)), Math.max(.001, e * (e < 1 ? 1.4 - .4 * e : 1)));
-    c.lineWidth = 8; c.strokeStyle = "#e3342f"; c.strokeRect(-230, -48, 460, 96); texto(segunda ? "SEMANA QUE VEM" : "A RECEBER", 0, 4, { tam: segunda ? 58 : 70, cor: "#e3342f", borda: "#fff", lw: 6 }); c.restore();
+    c.save(); c.translate(0, 66); c.rotate(-.08); c.scale(Math.max(.001, e * (e < 1 ? 1.4 - .4 * e : 1)), Math.max(.001, e * (e < 1 ? 1.4 - .4 * e : 1)));
+    c.lineWidth = 8; c.strokeStyle = "#e3342f"; c.strokeRect(-230, -40, 460, 80); texto(segunda ? "SEMANA QUE VEM" : "A RECEBER", 0, 4, { tam: segunda ? 54 : 64, cor: "#e3342f", borda: "#fff", lw: 6 }); c.restore();
   });
   // calendário: o tempo passando
   [["7 DIAS", se + .15], ["14 DIAS", se + 1.35], ["30 DIAS", se + 2.55]].forEach(([txt, a], i) => {

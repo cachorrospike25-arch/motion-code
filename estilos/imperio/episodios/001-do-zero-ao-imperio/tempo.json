@@ -1,0 +1,137 @@
+{
+ "fps": 30,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "comeco",
+   "t0": 0,
+   "t1": 4.213,
+   "fala": {
+    "t0": 0.9,
+    "t1": 3.863,
+    "texto": "Dez mil reais. Um terreno vazio. Nenhuma construção."
+   }
+  },
+  {
+   "cena": "investe",
+   "t0": 4.213,
+   "t1": 7.726,
+   "fala": {
+    "t0": 4.413,
+    "t1": 7.376,
+    "texto": "Primeiro investimento: oito mil reais numa pequena loja."
+   }
+  },
+  {
+   "cena": "obra",
+   "t0": 7.726,
+   "t1": 11.98,
+   "fala": {
+    "t0": 7.926,
+    "t1": 11.63,
+    "texto": "As máquinas chegam, e a obra sobe, parede por parede."
+   }
+  },
+  {
+   "cena": "abre",
+   "t0": 11.98,
+   "t1": 15.963,
+   "fala": {
+    "t0": 12.28,
+    "t1": 15.613,
+    "texto": "A loja abre as portas. Chegam os primeiros clientes."
+   }
+  },
+  {
+   "cena": "lucro",
+   "t0": 15.963,
+   "t1": 20.217,
+   "fala": {
+    "t0": 16.163,
+    "t1": 19.867,
+    "texto": "No primeiro mês, o lucro: dois mil e quinhentos reais."
+   }
+  },
+  {
+   "cena": "reinveste",
+   "t0": 20.217,
+   "t1": 23.359,
+   "fala": {
+    "t0": 20.417,
+    "t1": 23.009,
+    "texto": "E cada real volta para o negócio."
+   }
+  },
+  {
+   "cena": "expansao",
+   "t0": 23.359,
+   "t1": 29.935,
+   "fala": {
+    "t0": 23.659,
+    "t1": 29.585,
+    "texto": "Um ano depois, o caixa paga a expansão: estacionamento maior, iluminação, árvores e uma segunda loja."
+   }
+  },
+  {
+   "cena": "lucro2",
+   "t0": 29.935,
+   "t1": 33.819,
+   "fala": {
+    "t0": 30.135,
+    "t1": 33.469,
+    "texto": "O lucro sobe para nove mil reais por mês."
+   }
+  },
+  {
+   "cena": "salto",
+   "t0": 33.819,
+   "t1": 38.372,
+   "fala": {
+    "t0": 34.319,
+    "t1": 38.022,
+    "texto": "No terceiro ano, o grande salto: um centro comercial completo."
+   }
+  },
+  {
+   "cena": "movimento",
+   "t0": 38.372,
+   "t1": 41.872,
+   "fala": {
+    "t0": 38.572,
+    "t1": 41.165,
+    "texto": "Mais lojas, mais carros, mais gente trabalhando."
+   }
+  },
+  {
+   "cena": "patrimonio",
+   "t0": 41.872,
+   "t1": 47.437,
+   "fala": {
+    "t0": 42.272,
+    "t1": 47.087,
+    "texto": "Cinco anos depois, o patrimônio passa de um milhão e duzentos mil reais."
+   }
+  },
+  {
+   "cena": "comecou",
+   "t0": 47.437,
+   "t1": 51.637,
+   "fala": {
+    "t0": 48.037,
+    "t1": 50.63,
+    "texto": "E tudo começou com dez mil reais."
+   }
+  },
+  {
+   "cena": "cta",
+   "t0": 51.637,
+   "t1": 56.137,
+   "fala": {
+    "t0": 51.937,
+    "t1": 54.9,
+    "texto": "O que devemos construir agora? Comenta aqui embaixo."
+   }
+  }
+ ],
+ "total": 56.137
+}

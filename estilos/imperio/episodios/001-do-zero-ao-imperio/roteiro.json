@@ -1,0 +1,23 @@
+{
+ "titulo": "Do zero ao império",
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.35,
+ "financas": "patrimônio = caixa + custo das obras (sem valorização). Loja 8.000 no mês 1 (lucro 2.500/mês); expansão 25.000 no mês 12 (lucro 9.000/mês); centro comercial 200.000 no mês 36 (lucro 40.000/mês); fim no mês 60: caixa 980.500, patrimônio 1.213.500",
+ "atos": [
+  {"cena": "comeco", "dura": 3.6, "narracao": {"em": 0.9, "texto": "Dez mil reais. Um terreno vazio. Nenhuma construção."}},
+  {"cena": "investe", "dura": 2.0, "narracao": {"em": 0.2, "texto": "Primeiro investimento: oito mil reais numa pequena loja."}},
+  {"cena": "obra", "dura": 2.0, "narracao": {"em": 0.2, "texto": "As máquinas chegam, e a obra sobe, parede por parede."}},
+  {"cena": "abre", "dura": 2.0, "narracao": {"em": 0.3, "texto": "A loja abre as portas. Chegam os primeiros clientes."}},
+  {"cena": "lucro", "dura": 2.0, "narracao": {"em": 0.2, "texto": "No primeiro mês, o lucro: dois mil e quinhentos reais."}},
+  {"cena": "reinveste", "dura": 2.4, "narracao": {"em": 0.2, "texto": "E cada real volta para o negócio."}},
+  {"cena": "expansao", "dura": 2.0, "narracao": {"em": 0.3, "texto": "Um ano depois, o caixa paga a expansão: estacionamento maior, iluminação, árvores e uma segunda loja."}},
+  {"cena": "lucro2", "dura": 2.0, "narracao": {"em": 0.2, "texto": "O lucro sobe para nove mil reais por mês."}},
+  {"cena": "salto", "dura": 2.0, "narracao": {"em": 0.5, "texto": "No terceiro ano, o grande salto: um centro comercial completo."}},
+  {"cena": "movimento", "dura": 3.5, "narracao": {"em": 0.2, "texto": "Mais lojas, mais carros, mais gente trabalhando."}},
+  {"cena": "patrimonio", "dura": 2.0, "narracao": {"em": 0.4, "texto": "Cinco anos depois, o patrimônio passa de um milhão e duzentos mil reais."}},
+  {"cena": "comecou", "dura": 4.2, "narracao": {"em": 0.6, "texto": "E tudo começou com dez mil reais."}},
+  {"cena": "cta", "dura": 4.5, "narracao": {"em": 0.3, "texto": "O que devemos construir agora? Comenta aqui embaixo."}}
+ ]
+}

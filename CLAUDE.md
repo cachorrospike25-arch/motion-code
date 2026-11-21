@@ -43,6 +43,7 @@ Se o Macks não disser no pedido, perguntar com **AskUserQuestion** (uma chamada
 | **3D WebGL** | curta 3D em código sem Blender (three.js no Chrome headless): quarto ao pôr do sol, persiana recortando o sol, computador retrô com a tela viva, profundidade de campo, bloom e grão, legenda palavra por palavra | 16:9, 9:16 e 1:1 | `estilos/3d-webgl/` | 001 (skill 3D) e 002 (Motion Code, 41 s) entregues em 16:9, aguardando ver; depois 9:16 e 1:1 |
 | **Motion Master** | explicador rápido: tipografia cinética palavra por palavra (palavra-chave vermelha gigante, cursiva, binário ciano), cubo voxel do Claude, mosaico de pixels nos cortes, desenho de som no lugar da trilha | 16:9 (9:16 e 1:1 a fazer) | `estilos/motion-master/` | estilo aprovado; 001 (Motion Code, 36,7 s) entregue em 16:9 (05/11/2026); falta 9:16, 1:1 e a skill |
 | **Ficha Técnica** | produto no centro de um simulador: painéis creme/grafite, um acento laranja, modos de operação, vista explodida; produto da Higgsfield ou em código | 16:9 | `estilos/ficha-tecnica/` | amostra 000 renderizada (05/11/2026), aguardando aprovação |
+| **Império** | simulação 3D de construção e gestão: o mesmo terreno vira empreendimento (obras animadas, carros, clientes, HUD de caixa, lucro e patrimônio), narrador e trilha cinematográfica em código | 9:16 | `estilos/imperio/` | 001 (Do zero ao império) em produção |
 
 O estado detalhado de cada episódio fica na tabela do `CLAUDE.md` do estilo. Ao mudar um episódio de etapa, atualizar lá e, se mudar o resumo, a coluna "Estado" acima.
 

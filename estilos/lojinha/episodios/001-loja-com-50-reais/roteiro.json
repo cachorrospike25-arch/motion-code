@@ -1,0 +1,103 @@
+{
+ "titulo": "Você abriu uma loja com apenas R$ 50",
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.3,
+ "financas": "começa com R$ 50; compra 10 chaveiros a R$ 3 (R$ 30) e fica com R$ 20; vende os 10 a R$ 5 (R$ 50 em vendas); caixa final R$ 70; lucro bruto R$ 20 (R$ 2 por chaveiro)",
+ "atos": [
+  {
+   "cena": "gancho",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.5,
+    "texto": "Você abriu sua primeira loja com apenas cinquenta reais."
+   }
+  },
+  {
+   "cena": "vazia",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Prateleira vazia, nenhum cliente e uma teia de aranha no canto."
+   }
+  },
+  {
+   "cena": "fornecedor",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Até que aparece um fornecedor: dez chaveiros, três reais cada."
+   }
+  },
+  {
+   "cena": "compra",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Você compra todos por trinta reais e fica com vinte no bolso."
+   }
+  },
+  {
+   "cena": "vitrine",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Arruma tudo na vitrine e coloca cada chaveiro a cinco reais."
+   }
+  },
+  {
+   "cena": "clientes",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Vira a plaquinha para aberto... e o primeiro cliente entra."
+   }
+  },
+  {
+   "cena": "vendas",
+   "dura": 4.6,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Depois outro, e mais outro. Cinco reais em cada venda."
+   }
+  },
+  {
+   "cena": "esgotou",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Em pouco tempo, esgotou! Cinquenta reais em vendas."
+   }
+  },
+  {
+   "cena": "resultado",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.4,
+    "texto": "Somando os vinte que sobraram, agora você tem setenta. Lucro bruto: vinte reais."
+   }
+  },
+  {
+   "cena": "olha",
+   "dura": 2.0,
+   "narracao": {
+    "em": 0.6,
+    "texto": "Aí você olha para aquela loja grande do outro lado da rua... e começa a imaginar."
+   }
+  },
+  {
+   "cena": "final",
+   "dura": 3.4,
+   "narracao": {
+    "em": 0.5,
+    "texto": "Você começou com apenas R$ 50 e conseguiu seu primeiro lucro. Mas agora precisa tomar uma decisão: reinvestir tudo ou guardar o dinheiro?",
+    "voz_texto": "Você começou com apenas cinquenta reais e conseguiu seu primeiro lucro. Mas agora precisa tomar uma decisão: reinvestir tudo... ou guardar o dinheiro?"
+   }
+  },
+  {
+   "cena": "fim",
+   "dura": 2.6
+  }
+ ]
+}

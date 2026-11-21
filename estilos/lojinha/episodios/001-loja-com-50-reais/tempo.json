@@ -1,0 +1,135 @@
+{
+ "fps": 30,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "gancho",
+   "entrada": null,
+   "t0": 0,
+   "t1": 4.073,
+   "fala": {
+    "t0": 0.5,
+    "t1": 3.773,
+    "texto": "Você abriu sua primeira loja com apenas cinquenta reais."
+   }
+  },
+  {
+   "cena": "vazia",
+   "entrada": null,
+   "t0": 4.073,
+   "t1": 8.573,
+   "fala": {
+    "t0": 4.273,
+    "t1": 8.273,
+    "texto": "Prateleira vazia, nenhum cliente e uma teia de aranha no canto."
+   }
+  },
+  {
+   "cena": "fornecedor",
+   "entrada": null,
+   "t0": 8.573,
+   "t1": 12.809,
+   "fala": {
+    "t0": 8.873,
+    "t1": 12.509,
+    "texto": "Até que aparece um fornecedor: dez chaveiros, três reais cada."
+   }
+  },
+  {
+   "cena": "compra",
+   "entrada": null,
+   "t0": 12.809,
+   "t1": 17.773,
+   "fala": {
+    "t0": 13.109,
+    "t1": 17.473,
+    "texto": "Você compra todos por trinta reais e fica com vinte no bolso."
+   }
+  },
+  {
+   "cena": "vitrine",
+   "entrada": null,
+   "t0": 17.773,
+   "t1": 22.373,
+   "fala": {
+    "t0": 18.073,
+    "t1": 22.073,
+    "texto": "Arruma tudo na vitrine e coloca cada chaveiro a cinco reais."
+   }
+  },
+  {
+   "cena": "clientes",
+   "entrada": null,
+   "t0": 22.373,
+   "t1": 26.509,
+   "fala": {
+    "t0": 22.573,
+    "t1": 26.209,
+    "texto": "Vira a plaquinha para aberto... e o primeiro cliente entra."
+   }
+  },
+  {
+   "cena": "vendas",
+   "entrada": null,
+   "t0": 26.509,
+   "t1": 31.109,
+   "fala": {
+    "t0": 26.809,
+    "t1": 30.445,
+    "texto": "Depois outro, e mais outro. Cinco reais em cada venda."
+   }
+  },
+  {
+   "cena": "esgotou",
+   "entrada": null,
+   "t0": 31.109,
+   "t1": 34.518,
+   "fala": {
+    "t0": 31.309,
+    "t1": 34.218,
+    "texto": "Em pouco tempo, esgotou! Cinquenta reais em vendas."
+   }
+  },
+  {
+   "cena": "resultado",
+   "entrada": null,
+   "t0": 34.518,
+   "t1": 39.945,
+   "fala": {
+    "t0": 34.918,
+    "t1": 39.645,
+    "texto": "Somando os vinte que sobraram, agora você tem setenta. Lucro bruto: vinte reais."
+   }
+  },
+  {
+   "cena": "olha",
+   "entrada": null,
+   "t0": 39.945,
+   "t1": 46.664,
+   "fala": {
+    "t0": 40.545,
+    "t1": 46.364,
+    "texto": "Aí você olha para aquela loja grande do outro lado da rua... e começa a imaginar."
+   }
+  },
+  {
+   "cena": "final",
+   "entrada": null,
+   "t0": 46.664,
+   "t1": 55.827,
+   "fala": {
+    "t0": 47.164,
+    "t1": 55.527,
+    "texto": "Você começou com apenas R$ 50 e conseguiu seu primeiro lucro. Mas agora precisa tomar uma decisão: reinvestir tudo ou guardar o dinheiro?"
+   }
+  },
+  {
+   "cena": "fim",
+   "entrada": null,
+   "t0": 55.827,
+   "t1": 58.427,
+   "fala": null
+  }
+ ],
+ "total": 58.427
+}

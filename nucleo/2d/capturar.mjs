@@ -17,10 +17,15 @@ const tweaks = fs.existsSync(pTw) ? JSON.parse(fs.readFileSync(pTw, "utf8")) : {
 // sandbox não deixa abrir o Chrome. Esse Chrome não lê arquivo local, então a página é montada aqui: scripts injetados,
 // fonte (url("file://...")) e imagens do episódio (ativos/, prints/) como data URL, em window.DADOS[caminho].
 const cdp = process.env.CHROME_CDP;
+// Chrome: CHROME do ambiente, o do Mac do Macks ou o Chromium do Playwright (sessões na nuvem, Linux)
+const MAC = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const PW = "/opt/pw-browsers";
+const chrome = process.env.CHROME || (fs.existsSync(MAC) ? MAC : fs.existsSync(PW) &&
+  fs.readdirSync(PW).filter((d) => /^chromium-\d+$/.test(d)).map((d) => path.join(PW, d, "chrome-linux64", "chrome")).find((f) => fs.existsSync(f)));
 const browser = cdp ? await puppeteer.connect({ browserURL: cdp }) : await puppeteer.launch({
-  executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  executablePath: chrome,
   headless: true,
-  args: ["--allow-file-access-from-files"],
+  args: ["--allow-file-access-from-files", ...(chrome === MAC ? [] : ["--no-sandbox"])],
 });
 const page = await browser.newPage();
 if (cdp) {

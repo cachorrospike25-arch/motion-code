@@ -1,0 +1,16 @@
+{
+ "titulo": "Quem levou os R$ 20?",
+ "episodio": 4,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.25,
+ "financas": "vídeo independente e interativo. Caixa R$ 100 → R$ 80 (sumiram R$ 20). 4 suspeitos; a câmera mostra um vulto de boné e tênis amarelo. Culpado (revelado no próximo vídeo): suspeito 3 (boné verde + tênis amarelo). Suspeito 1 tem boné e tênis branco; 2 tem tênis amarelo sem boné; 4 não tem boné nem tênis amarelo.",
+ "atos": [
+  {"cena": "gancho", "dura": 3.0, "narracao": {"em": 0.25, "texto": "Sumiram R$ 20 do caixa. E só um destes quatro levou.", "voz_texto": "Sumiram vinte reais do caixa. E só um destes quatro levou."}},
+  {"cena": "suspeitos", "dura": 6.0, "narracao": {"em": 0.25, "texto": "Quatro suspeitos na loja. Todos juram que são inocentes."}},
+  {"cena": "camera", "dura": 6.2, "narracao": {"em": 0.25, "texto": "A câmera pegou um vulto. Preste atenção nos detalhes. Assiste de novo!"}},
+  {"cena": "desafio", "dura": 4.6, "narracao": {"em": 0.25, "texto": "Quem foi? Comenta o número do culpado!"}},
+  {"cena": "fim", "dura": 3.2, "narracao": {"em": 0.25, "texto": "Segue o perfil: amanhã eu revelo quem foi."}}
+ ]
+}

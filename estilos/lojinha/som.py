@@ -317,6 +317,13 @@ def murmurio(d, g=1.0):
     return r * mod * np.minimum(1, tt / .5) * np.minimum(1, (d - tt) / .6) * g
 
 
+def alarme(g=1.0):
+    n = int(1.0 * SR)
+    tt = np.arange(n) / SR
+    f = np.where((tt * 4) % 1 < .5, 880, 660)
+    return np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * .35 * np.minimum(1, (1 - tt) / .1) * g
+
+
 def trombone(g=1.0):
     n = int(1.3 * SR)
     tt = np.arange(n) / SR
@@ -370,6 +377,8 @@ while x < b:
     soma(efx, x, tique(.35, 2600 if j % 2 else 2000))
     x += .5
     j += 1
+for a in ev.get("alarme", []):
+    soma(efx, a, alarme(), .3)
 for a in ev.get("trombone", []):
     soma(efx, a, trombone(), .3)
 

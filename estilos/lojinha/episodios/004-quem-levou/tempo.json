@@ -1,0 +1,63 @@
+{
+ "fps": 30,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "gancho",
+   "entrada": null,
+   "t0": 0.0,
+   "t1": 4.5,
+   "fala": {
+    "t0": 0.25,
+    "t1": 4.25,
+    "texto": "Sumiram R$ 20 do caixa. E só um destes quatro levou."
+   }
+  },
+  {
+   "cena": "suspeitos",
+   "entrada": null,
+   "t0": 4.5,
+   "t1": 10.5,
+   "fala": {
+    "t0": 4.75,
+    "t1": 8.023,
+    "texto": "Quatro suspeitos na loja. Todos juram que são inocentes."
+   }
+  },
+  {
+   "cena": "camera",
+   "entrada": null,
+   "t0": 10.5,
+   "t1": 16.7,
+   "fala": {
+    "t0": 10.75,
+    "t1": 15.114,
+    "texto": "A câmera pegou um vulto. Preste atenção nos detalhes. Assiste de novo!"
+   }
+  },
+  {
+   "cena": "desafio",
+   "entrada": null,
+   "t0": 16.7,
+   "t1": 21.3,
+   "fala": {
+    "t0": 16.95,
+    "t1": 19.495,
+    "texto": "Quem foi? Comenta o número do culpado!"
+   }
+  },
+  {
+   "cena": "fim",
+   "entrada": null,
+   "t0": 21.3,
+   "t1": 24.709,
+   "fala": {
+    "t0": 21.55,
+    "t1": 24.459,
+    "texto": "Segue o perfil: amanhã eu revelo quem foi."
+   }
+  }
+ ],
+ "total": 24.709,
+ "episodio": 4
+}

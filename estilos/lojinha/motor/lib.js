@@ -416,7 +416,8 @@ function hud(t) {
   const c = ctx; const ent = eob(lin(t, .15, .6)); if (ent <= 0) return;
   c.save(); c.translate(0, (1 - ent) * -260);
   const R = HUD.rot || ["DINHEIRO", "ESTOQUE", "VENDAS", "LUCRO"];
-  const itens = [[R[0], "dinheiro", HUD.din, true, "#5bd66b"], [R[1], "estoque", HUD.est, false, "#ffcf3a"], [R[2], "vendas", HUD.ven, true, "#4fc3ff"], [R[3], "lucro", HUD.luc, true, "#5bd66b"]];
+  const MO = HUD.moeda || [true, false, true, true];
+  const itens = [[R[0], "dinheiro", HUD.din, MO[0], "#5bd66b"], [R[1], "estoque", HUD.est, MO[1], "#ffcf3a"], [R[2], "vendas", HUD.ven, MO[2], "#4fc3ff"], [R[3], "lucro", HUD.luc, MO[3], "#5bd66b"]];
   itens.forEach(([rot, ic, f, rs, cor], i) => {
     const x = 34 + i * 256, y = 150; const { v, k } = f(t);
     const bump = k > 0 && k < 1 ? Math.sin(k * Math.PI) * .12 : 0;

@@ -7,17 +7,110 @@
  "respiro": 0.3,
  "financas": "começa com R$ 70 (caixa do ep. 1; lucro total R$ 20). Compra 14 chaveiros premium a R$ 5 = R$ 70 e fica com R$ 0. Vende os 14 a R$ 9 = R$ 126 (lucro de R$ 4 por peça, R$ 56 no dia). Lucro total R$ 76. Gancho: encomenda de 100 a R$ 9 = R$ 900, custo 100 × R$ 5 = R$ 500, caixa R$ 126, faltam R$ 374",
  "atos": [
-  {"cena": "gancho", "dura": 2.4, "narracao": {"em": 0.3, "texto": "Você reinvestiu tudo: R$ 70. Sem plano B.", "voz_texto": "Você reinvestiu tudo: setenta reais. Sem plano B."}},
-  {"cena": "fornecedor", "dura": 2.2, "narracao": {"em": 0.2, "texto": "O fornecedor chega com uma novidade: chaveiros premium, R$ 5 cada.", "voz_texto": "O fornecedor chega com uma novidade: chaveiros premium, cinco reais cada."}},
-  {"cena": "compra", "dura": 4.8, "narracao": {"em": 0.3, "texto": "R$ 70 dividido por 5: catorze chaveiros. E seu dinheiro vai a zero.", "voz_texto": "Setenta reais dividido por cinco: catorze chaveiros. E o seu dinheiro vai a zero."}},
-  {"cena": "vitrine", "dura": 3.4, "narracao": {"em": 0.2, "texto": "Você arruma a vitrine e marca R$ 9 em cada um.", "voz_texto": "Você arruma a vitrine e marca nove reais em cada um."}},
-  {"cena": "vazio", "dura": 4.2, "narracao": {"em": 0.3, "texto": "Abre a loja... e os primeiros clientes olham o preço e vão embora."}},
-  {"cena": "ideia", "dura": 3.6, "narracao": {"em": 0.3, "texto": "Aí vem a ideia: edição limitada, só catorze peças."}},
-  {"cena": "vendas", "dura": 5.4, "narracao": {"em": 0.2, "texto": "E funciona! Fila na porta, e cada um sai por R$ 9.", "voz_texto": "E funciona! Fila na porta, e cada um sai por nove reais."}},
-  {"cena": "esgotou", "dura": 2.2, "narracao": {"em": 0.2, "texto": "Esgotou de novo! R$ 126 em vendas.", "voz_texto": "Esgotou de novo! Cento e vinte e seis reais em vendas."}},
-  {"cena": "resultado", "dura": 3.4, "narracao": {"em": 0.3, "texto": "Você investiu 70 e terminou com 126. Lucro do dia: R$ 56.", "voz_texto": "Você investiu setenta e terminou com cento e vinte e seis. Lucro do dia: cinquenta e seis reais."}},
-  {"cena": "encomenda", "dura": 4.0, "narracao": {"em": 0.3, "texto": "Então entra um homem de terno. Uma empresa quer cem chaveiros: R$ 900 no total.", "voz_texto": "Então entra um homem de terno. Uma empresa quer cem chaveiros: novecentos reais no total."}},
-  {"cena": "final", "dura": 3.4, "narracao": {"em": 0.4, "texto": "Mas produzir custa R$ 500 e você tem só R$ 126. Aceitar a encomenda ou continuar pequeno?", "voz_texto": "Mas produzir custa quinhentos reais e você tem só cento e vinte e seis. Aceitar a encomenda... ou continuar pequeno?"}},
-  {"cena": "fim", "dura": 2.6}
+  {
+   "cena": "gancho",
+   "dura": 2.4,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Você reinvestiu tudo: R$ 70. Sem plano B.",
+    "voz_texto": "Você reinvestiu tudo: setenta reais. Sem plano B."
+   }
+  },
+  {
+   "cena": "fornecedor",
+   "dura": 2.2,
+   "narracao": {
+    "em": 0.2,
+    "texto": "O fornecedor chega com uma novidade: chaveiros premium, R$ 5 cada.",
+    "voz_texto": "O fornecedor chega com uma novidade: chaveiros premium, cinco reais cada."
+   }
+  },
+  {
+   "cena": "compra",
+   "dura": 4.8,
+   "narracao": {
+    "em": 0.3,
+    "texto": "R$ 70 dividido por 5: catorze chaveiros. E seu dinheiro vai a zero.",
+    "voz_texto": "Setenta reais dividido por cinco: catorze chaveiros. E o seu dinheiro vai a zero."
+   }
+  },
+  {
+   "cena": "vitrine",
+   "dura": 3.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Você arruma a vitrine e marca R$ 9 em cada um.",
+    "voz_texto": "Você arruma a vitrine e marca nove reais em cada um."
+   }
+  },
+  {
+   "cena": "vazio",
+   "dura": 4.2,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Abre a loja... e os primeiros clientes olham o preço e vão embora."
+   }
+  },
+  {
+   "cena": "ideia",
+   "dura": 3.6,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Aí vem a ideia: edição limitada, só catorze peças."
+   }
+  },
+  {
+   "cena": "vendas",
+   "dura": 5.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "E funciona! Fila na porta, e cada um sai por R$ 9.",
+    "voz_texto": "E funciona! Fila na porta, e cada um sai por nove reais."
+   }
+  },
+  {
+   "cena": "esgotou",
+   "dura": 2.2,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Esgotou de novo! R$ 126 em vendas.",
+    "voz_texto": "Esgotou de novo! Cento e vinte e seis reais em vendas."
+   }
+  },
+  {
+   "cena": "resultado",
+   "dura": 3.4,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Você investiu 70 e terminou com 126. Lucro do dia: R$ 56.",
+    "voz_texto": "Você investiu setenta e terminou com cento e vinte e seis. Lucro do dia: cinquenta e seis reais."
+   }
+  },
+  {
+   "cena": "encomenda",
+   "dura": 4.0,
+   "narracao": {
+    "em": 0.3,
+    "texto": "Então entra um homem de terno. Uma empresa quer cem chaveiros: R$ 900 no total.",
+    "voz_texto": "Então entra um homem de terno. Uma empresa quer cem chaveiros: novecentos reais no total."
+   }
+  },
+  {
+   "cena": "final",
+   "dura": 3.4,
+   "narracao": {
+    "em": 0.4,
+    "texto": "Mas produzir custa R$ 500 e você tem só R$ 126. Aceitar a encomenda ou continuar pequeno?",
+    "voz_texto": "Mas produzir custa quinhentos reais e você tem só cento e vinte e seis. Aceitar a encomenda... ou continuar pequeno?"
+   }
+  },
+  {
+   "cena": "fim",
+   "dura": 3.2,
+   "narracao": {
+    "em": 0.25,
+    "texto": "Segue o perfil para ver o episódio 3."
+   }
+  }
  ]
 }

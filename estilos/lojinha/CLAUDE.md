@@ -12,6 +12,8 @@ Simulador de vida e negócios em 2D: personagens caricatos (cabeção, olhos gra
 - **Voz:** `narrador` do `nucleo/vozes.json` via `nucleo/2d/narrar.py`; `voz_texto` quando a grafia falada difere da legenda ("R$ 50" → "cinquenta reais").
 - **Som:** `som.py` (trilha por trecho, não loop; efeitos do `eventos.json`; trilha abaixa embaixo da voz; -14 LUFS; tom de sala para nunca ter silêncio digital). Sem narração, a trilha sobe um pouco.
 
+- **Pedir para seguir:** todo episódio termina com a fala "Segue o perfil para ver o episódio N" e um cartão rosa SEGUE O PERFIL com o @ da conta (a partir do 002; o 001, já publicado, não tem). Também na legenda do post.
+
 ## Roteiro
 
 `episodios/<NNN-slug>/roteiro.json` no formato do `narrar.py`. O 001 amarra o motor aos ids `gancho, vazia, fornecedor, compra, vitrine, clientes, vendas, esgotou, resultado, olha, final, fim`. Episódio novo: criar `motor/ep<N>.js` (montar, câmera, interior, cartões, decisão), pôr `"episodio": N` no roteiro e, no `eventos()`, as chaves de som mais `secoes` (onde a música muda; `quieto` = trecho sem bateria). O elenco, os objetos, a interface e a legenda vêm da `lib.js`. Sem voz: `python3 estimar.py episodios/<slug>` gera o `tempo.json` estimado.
@@ -30,4 +32,4 @@ node ../../nucleo/2d/capturar.mjs motor/pagina.html episodios/001-loja-com-50-re
 | Nº | Título | Estado |
 |---|---|---|
 | 001 | Você abriu uma loja com apenas R$ 50 (10 chaveiros a R$ 3, vendidos a R$ 5: caixa R$ 70, lucro bruto R$ 20; gancho: reinvestir ou guardar?) | entregue sem narração em 9:16 (58,4 s), com falas e tempos; voz do Fish deu 401 |
-| 002 | Você reinvestiu tudo (R$ 70 → 14 chaveiros premium a R$ 5 → vendidos a R$ 9: R$ 126, lucro do dia R$ 56; edição limitada salva as vendas; gancho: encomenda de 100 por R$ 900 com custo R$ 500 e só R$ 126 no caixa: aceitar ou continuar pequeno?) | entregue sem narração em 9:16 (56 s), com falas e tempos |
+| 002 | Você reinvestiu tudo (R$ 70 → 14 chaveiros premium a R$ 5 → vendidos a R$ 9: R$ 126, lucro do dia R$ 56; edição limitada salva as vendas; gancho: encomenda de 100 por R$ 900 com custo R$ 500 e só R$ 126 no caixa: aceitar ou continuar pequeno?) | entregue sem narração em 9:16 (56,8 s), com falas, tempos e pedido para seguir |

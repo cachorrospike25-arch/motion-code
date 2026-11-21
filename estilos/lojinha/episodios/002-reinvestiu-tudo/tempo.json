@@ -127,10 +127,14 @@
    "cena": "fim",
    "entrada": null,
    "t0": 53.382,
-   "t1": 55.982,
-   "fala": null
+   "t1": 56.841,
+   "fala": {
+    "t0": 53.632,
+    "t1": 56.541,
+    "texto": "Segue o perfil para ver o episódio 3."
+   }
   }
  ],
- "total": 55.982,
+ "total": 56.841,
  "episodio": 2
 }

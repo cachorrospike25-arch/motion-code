@@ -269,9 +269,17 @@ function decisaoEp(t) {
   }
   const ke = lin(t, TEMPO.total - 2.5, TEMPO.total - 2.0);
   if (ke > 0) {
-    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.translate(540, 1560); c.scale(eob(ke), eob(ke)); c.rotate(-.04);
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.translate(540, 1500); c.scale(eob(ke), eob(ke)); c.rotate(-.04);
     forma(P.rr(-330, -60, 660, 120, 30), "#ffd23f", 7); texto("EPISÓDIO 3 EM BREVE", 0, 4, { tam: 54, cor: OL, borda: null }); c.restore();
-    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = lin(t, TEMPO.total - 2.0, TEMPO.total - 1.6); texto("COMENTA: ACEITAR OU CONTINUAR?", 540, 1700, { tam: 46, cor: "#fff", lw: 10 }); c.restore();
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = lin(t, TEMPO.total - 2.0, TEMPO.total - 1.6); texto("COMENTA: ACEITAR OU CONTINUAR?", 540, 1800, { tam: 46, cor: "#fff", lw: 10 }); c.restore();
+  }
+  const kf = lin(t, F("fim") + .1, F("fim") + .45);
+  if (kf > 0) { // pedido para seguir: pílula pulsando no alto
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.translate(540, 372); const pu = 1 + .04 * Math.sin(t * 8), sc = eob(kf) * pu; c.scale(sc, sc);
+    forma(P.rr(-390, -34, 780, 108, 54), "#8a1f3a", 6); forma(P.rr(-390, -46, 780, 108, 54), "#ff3b6b", 6);
+    forma(P.el(-318, 8, 34, 34), "#fff", 5); texto("+", -318, 10, { tam: 54, cor: "#ff3b6b", borda: null });
+    texto("SEGUE O PERFIL", 30, -8, { tam: 52, cor: "#fff", lw: 9 }); texto("@fora_do_roteiroai", 30, 34, { tam: 30, fonte: "Fredoka", peso: 700, cor: "#ffe3ea", borda: null });
+    c.restore();
   }
 }
 function cortina(t) { // corte entre a vitrine pronta e a loja aberta

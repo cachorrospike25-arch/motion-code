@@ -71,7 +71,12 @@ def env_ad(n, a=.005, d=6.0):
 
 
 # ---------------- trechos ----------------
-T_NEG, T_VEN, T_FES, T_SON = F("fornecedor") - .3, F("clientes") + 1.2, F("esgotou"), F("olha") - .1
+S = ev.get("secoes", {})  # o episódio diz onde a música muda; sem isso, vale o desenho do episódio 1
+T_NEG = S.get("neg", F("fornecedor") - .3) if "neg" in S or "fornecedor" in ATO else 0
+T_VEN = S.get("ven", F("clientes") + 1.2 if "clientes" in ATO else 0)
+T_FES = S.get("fes", F("esgotou"))
+T_SON = S.get("son", F("olha") - .1 if "olha" in ATO else DUR - 6)
+QUIETO = S.get("quieto", [])  # trechos sem bateria, baixo nem melodia (loja vazia)
 T_DEC = ev["tiquetaque"][0]
 T_FIM = ev["fim"][0]
 BPM = 112
@@ -150,16 +155,20 @@ x, k = 0.0, 0
 while x < T_SON:
     raiz, notas = acorde(x)
     passo = k % 8
-    vendas = T_VEN <= x < T_SON
-    neg = x >= T_NEG
+    quieto = any(a <= x < b for a, b in QUIETO)
+    vendas = T_VEN <= x < T_SON and not quieto
+    neg = x >= T_NEG and not quieto
     # marimba: arpejo em colcheias (no começo só nos tempos)
-    if passo % 2 == 0 or neg:
+    if quieto:
+        if passo % 4 == 0:
+            soma(mus, x, marimba(hz(notas[1] + 12), .1, .5))
+    elif passo % 2 == 0 or neg:
         n = notas[[0, 1, 2, 1][passo % 4]] + 12
         soma(mus, x, marimba(hz(n), .16 if not vendas else .13))
     if vendas and passo % 2 == 0:
         soma(mus, x, marimba(hz(MELO[(k // 2) % 16] + 12), .14, .35))
     # baixo
-    if passo in (0, 3, 4, 6) or (not neg and passo == 0):
+    if not quieto and (passo in (0, 3, 4, 6) or (not neg and passo == 0)):
         if neg or passo == 0:
             soma(mus, x, baixo(hz(raiz - 12 + (7 if passo == 6 else 0)), .5))
     # bateria

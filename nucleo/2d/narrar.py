@@ -32,7 +32,7 @@ def main():
     audio = pasta / "audio"
     audio.mkdir(exist_ok=True)
 
-    t, tempo, clips = 0.0, {"fps": r.get("fps", 24), "formato": r.get("formato", "16:9"), "atos": []}, []
+    t, tempo, clips = 0.0, {"fps": r.get("fps", 24), "formato": r.get("formato", "16:9"), "atos": [], **({"episodio": r["episodio"]} if "episodio" in r else {})}, []
     for i, a in enumerate(atos):
         n = a.get("narracao")
         fala = None

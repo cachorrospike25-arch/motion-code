@@ -1,0 +1,136 @@
+{
+ "fps": 30,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "gancho",
+   "entrada": null,
+   "t0": 0.0,
+   "t1": 3.509,
+   "fala": {
+    "t0": 0.3,
+    "t1": 3.209,
+    "texto": "Você reinvestiu tudo: R$ 70. Sem plano B."
+   }
+  },
+  {
+   "cena": "fornecedor",
+   "entrada": null,
+   "t0": 3.509,
+   "t1": 8.009,
+   "fala": {
+    "t0": 3.709,
+    "t1": 7.709,
+    "texto": "O fornecedor chega com uma novidade: chaveiros premium, R$ 5 cada."
+   }
+  },
+  {
+   "cena": "compra",
+   "entrada": null,
+   "t0": 8.009,
+   "t1": 13.336,
+   "fala": {
+    "t0": 8.309,
+    "t1": 13.036,
+    "texto": "R$ 70 dividido por 5: catorze chaveiros. E seu dinheiro vai a zero."
+   }
+  },
+  {
+   "cena": "vitrine",
+   "entrada": null,
+   "t0": 13.336,
+   "t1": 17.836,
+   "fala": {
+    "t0": 13.536,
+    "t1": 17.536,
+    "texto": "Você arruma a vitrine e marca R$ 9 em cada um."
+   }
+  },
+  {
+   "cena": "vazio",
+   "entrada": null,
+   "t0": 17.836,
+   "t1": 23.163,
+   "fala": {
+    "t0": 18.136,
+    "t1": 22.863,
+    "texto": "Abre a loja... e os primeiros clientes olham o preço e vão embora."
+   }
+  },
+  {
+   "cena": "ideia",
+   "entrada": null,
+   "t0": 23.163,
+   "t1": 27.036,
+   "fala": {
+    "t0": 23.463,
+    "t1": 26.736,
+    "texto": "Aí vem a ideia: edição limitada, só catorze peças."
+   }
+  },
+  {
+   "cena": "vendas",
+   "entrada": null,
+   "t0": 27.036,
+   "t1": 32.436,
+   "fala": {
+    "t0": 27.236,
+    "t1": 31.6,
+    "texto": "E funciona! Fila na porta, e cada um sai por R$ 9."
+   }
+  },
+  {
+   "cena": "esgotou",
+   "entrada": null,
+   "t0": 32.436,
+   "t1": 35.481,
+   "fala": {
+    "t0": 32.636,
+    "t1": 35.181,
+    "texto": "Esgotou de novo! R$ 126 em vendas."
+   }
+  },
+  {
+   "cena": "resultado",
+   "entrada": null,
+   "t0": 35.481,
+   "t1": 40.445,
+   "fala": {
+    "t0": 35.781,
+    "t1": 40.145,
+    "texto": "Você investiu 70 e terminou com 126. Lucro do dia: R$ 56."
+   }
+  },
+  {
+   "cena": "encomenda",
+   "entrada": null,
+   "t0": 40.445,
+   "t1": 46.5,
+   "fala": {
+    "t0": 40.745,
+    "t1": 46.2,
+    "texto": "Então entra um homem de terno. Uma empresa quer cem chaveiros: R$ 900 no total."
+   }
+  },
+  {
+   "cena": "final",
+   "entrada": null,
+   "t0": 46.5,
+   "t1": 53.382,
+   "fala": {
+    "t0": 46.9,
+    "t1": 53.082,
+    "texto": "Mas produzir custa R$ 500 e você tem só R$ 126. Aceitar a encomenda ou continuar pequeno?"
+   }
+  },
+  {
+   "cena": "fim",
+   "entrada": null,
+   "t0": 53.382,
+   "t1": 55.982,
+   "fala": null
+  }
+ ],
+ "total": 55.982,
+ "episodio": 2
+}

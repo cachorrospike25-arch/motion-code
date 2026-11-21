@@ -72,10 +72,14 @@ def env_ad(n, a=.005, d=6.0):
 
 # ---------------- trechos ----------------
 S = ev.get("secoes", {})  # o episódio diz onde a música muda; sem isso, vale o desenho do episódio 1
-T_NEG = S.get("neg", F("fornecedor") - .3) if "neg" in S or "fornecedor" in ATO else 0
-T_VEN = S.get("ven", F("clientes") + 1.2 if "clientes" in ATO else 0)
-T_FES = S.get("fes", F("esgotou"))
-T_SON = S.get("son", F("olha") - .1 if "olha" in ATO else DUR - 6)
+def sec(nome, padrao):  # a seção vem do episódio; o padrão só é calculado se faltar (e só existe no episódio 1)
+    return S[nome] if nome in S else padrao()
+
+
+T_NEG = sec("neg", lambda: F("fornecedor") - .3 if "fornecedor" in ATO else 0)
+T_VEN = sec("ven", lambda: F("clientes") + 1.2 if "clientes" in ATO else 0)
+T_FES = sec("fes", lambda: F("esgotou") if "esgotou" in ATO else DUR + 1)
+T_SON = sec("son", lambda: F("olha") - .1 if "olha" in ATO else DUR - 6)
 QUIETO = S.get("quieto", [])  # trechos sem bateria, baixo nem melodia (loja vazia)
 T_DEC = ev["tiquetaque"][0]
 T_FIM = ev["fim"][0]
@@ -183,7 +187,7 @@ while x < T_SON:
     k += 1
 
 # festa: metais e prato no esgotou e no resultado
-for a, g in ((T_FES, 1.0), (F("resultado") + .1, .7)):
+for a, g in (S["festas"] if "festas" in S else [(T_FES, 1.0), (F("resultado") + .1, .7)]):
     soma(mus, a, metais([hz(60), hz(64), hz(67), hz(72)], .6 * g, 1.4))
     soma(bat, a, prato(.25 * g))
 
@@ -313,6 +317,14 @@ def murmurio(d, g=1.0):
     return r * mod * np.minimum(1, tt / .5) * np.minimum(1, (d - tt) / .6) * g
 
 
+def trombone(g=1.0):
+    n = int(1.3 * SR)
+    tt = np.arange(n) / SR
+    f = np.interp(tt, [0, .25, .5, .75, 1.3], [233, 220, 208, 196, 156]) * (1 + .02 * np.sin(2 * np.pi * 6 * tt))
+    s = sum(np.sin(2 * np.pi * np.cumsum(f * h) / SR) / h for h in range(1, 7))
+    return filtro(s, hi=1800) * np.minimum(1, tt / .04) * np.minimum(1, (1.3 - tt) / .15) * g
+
+
 def tique(g=1.0, f=2400):
     n = int(.03 * SR)
     tt = np.arange(n) / SR
@@ -335,8 +347,9 @@ for a in ev["carimbo"]:
 for a in ev["placa"]:
     soma(efx, a, whoosh(.25), .25)
     soma(efx, a + .3, clique(), .4)
-a, b = ev["grilos"]
-soma(efx, a, grilo(b - a), .05)
+if len(ev["grilos"]) == 2:
+    a, b = ev["grilos"]
+    soma(efx, a, grilo(b - a), .05)
 for a in ev["feno"]:
     soma(efx, a, whoosh(2.2), .12)
 for a in ev["whoosh"]:
@@ -348,14 +361,17 @@ for a in ev["pulo"]:
     soma(efx, a, boing(), .25)
 for a in ev["brilho"]:
     soma(efx, a, brilho(), .3)
-a, b = ev["multidao"]
-soma(efx, a, murmurio(b - a), .07)
+if len(ev["multidao"]) == 2 and ev["multidao"][1] - ev["multidao"][0] > .5:
+    a, b = ev["multidao"]
+    soma(efx, a, murmurio(b - a), .07)
 a, b = ev["tiquetaque"]
 x, j = a, 0
 while x < b:
     soma(efx, x, tique(.35, 2600 if j % 2 else 2000))
     x += .5
     j += 1
+for a in ev.get("trombone", []):
+    soma(efx, a, trombone(), .3)
 
 # ---------------- mixagem ----------------
 audio = pasta / "audio"

@@ -1,0 +1,18 @@
+{
+ "titulo": "Seu melhor amigo pediu fiado",
+ "episodio": 3,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.25,
+ "financas": "vídeo independente. Caixa R$ 40, estoque 10 chaveiros (custo R$ 5, preço R$ 10 = R$ 100 em mercadoria). O amigo leva os 10 fiado: estoque 0, A RECEBER R$ 100, lucro R$ 0 (só existe quando pagar). Dia 7, 14, 30; ele segue devendo.",
+ "atos": [
+  {"cena": "gancho", "dura": 3.0, "narracao": {"em": 0.25, "texto": "Seu melhor amigo entrou na loja e pediu fiado."}},
+  {"cena": "pedido", "dura": 3.6, "narracao": {"em": 0.2, "texto": "Levou 10 chaveiros: Pago semana que vem, juro!", "voz_texto": "Levou dez chaveiros: Pago semana que vem, juro!"}},
+  {"cena": "caderninho", "dura": 4.2, "narracao": {"em": 0.2, "texto": "Você anota no caderninho: R$ 100 a receber. E o estoque zera.", "voz_texto": "Você anota no caderninho: cem reais a receber. E o estoque zera."}},
+  {"cena": "semanas", "dura": 4.8, "narracao": {"em": 0.2, "texto": "Passa uma semana. Duas. Um mês inteiro..."}},
+  {"cena": "cobranca", "dura": 4.4, "narracao": {"em": 0.2, "texto": "Aí você cobra. E ele responde: semana que vem eu pago!"}},
+  {"cena": "final", "dura": 4.8, "narracao": {"em": 0.25, "texto": "Fiado para amigo: pode ou nunca? Marca aquele amigo que te deve."}},
+  {"cena": "fim", "dura": 3.0, "narracao": {"em": 0.2, "texto": "Segue o perfil e comenta: pode ou nunca?"}}
+ ]
+}

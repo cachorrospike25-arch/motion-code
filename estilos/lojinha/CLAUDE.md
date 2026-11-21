@@ -33,3 +33,4 @@ node ../../nucleo/2d/capturar.mjs motor/pagina.html episodios/001-loja-com-50-re
 |---|---|---|
 | 001 | Você abriu uma loja com apenas R$ 50 (10 chaveiros a R$ 3, vendidos a R$ 5: caixa R$ 70, lucro bruto R$ 20; gancho: reinvestir ou guardar?) | entregue sem narração em 9:16 (58,4 s), com falas e tempos; voz do Fish deu 401 |
 | 002 | Você reinvestiu tudo (R$ 70 → 14 chaveiros premium a R$ 5 → vendidos a R$ 9: R$ 126, lucro do dia R$ 56; edição limitada salva as vendas; gancho: encomenda de 100 por R$ 900 com custo R$ 500 e só R$ 126 no caixa: aceitar ou continuar pequeno?) | entregue sem narração em 9:16 (56,8 s), com falas, tempos e pedido para seguir |
+| 003 | Seu melhor amigo pediu fiado (vídeo independente de ~30 s para comentar e marcar amigo: fiado de R$ 100, estoque zera, ele some e enrola; pergunta PODE × NUNCA; escolhido a partir da análise do perfil) | entregue sem narração em 9:16 (29,7 s), com falas, tempos e pedido para seguir |

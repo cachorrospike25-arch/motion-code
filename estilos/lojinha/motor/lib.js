@@ -439,7 +439,7 @@ function hud(t) {
   c.restore();
   // DIA 1
   const kd = lin(t, .4, .9) * (1 - lin(t, HUD.dia.fim, HUD.dia.fim + .4));
-  if (kd > 0) { c.save(); c.globalAlpha = kd; forma(P.rr(34, 330, 150, 56, 28), "#ff5a5f", 5); texto(HUD.dia.txt, 109, 360, { tam: 36, cor: "#fff", lw: 6 }); c.restore(); }
+  if (kd > 0) { c.save(); c.globalAlpha = kd; forma(P.rr(34, 330, 150, 56, 28), "#ff5a5f", 5); texto(typeof HUD.dia.txt === "function" ? HUD.dia.txt(t) : HUD.dia.txt, 109, 360, { tam: 36, cor: "#fff", lw: 6 }); c.restore(); }
 }
 function cartao(cx, cy, w, h, k, desenho, cor = "#fff8ea") {
   if (k <= 0) return; const c = ctx; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.translate(cx, cy); const s = eob(Math.min(1, k)); c.scale(s, s); c.rotate((1 - s) * -.1);

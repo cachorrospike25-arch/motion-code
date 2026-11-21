@@ -32,4 +32,4 @@ node capturar.mjs episodios/001-do-zero-ao-imperio teste.mp4 --de 20 --ate 26  #
 
 | Nº | Título | Estado |
 |---|---|---|
-| 001 | Do zero ao império (loja → expansão → centro comercial, R$ 10.000 → R$ 1.213.500) | em produção |
+| 001 | Do zero ao império (loja → expansão → centro comercial, R$ 10.000 → R$ 1.213.500) | entregue sem narração em 9:16 (56 s), com falas e tempos; voz do Fish deu 401, o Macks narra depois; não postado |

@@ -502,3 +502,44 @@ function iris(t, a, b, cx, cy) { // fecha em a, abre em b
   const c = ctx; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); const p = new Path2D(); p.rect(0, 0, W, H); p.ellipse(cx, cy, Math.max(.1, r), Math.max(.1, r), 0, 0, 7); c.fillStyle = "#1e1433"; c.fill(p, "evenodd"); c.restore();
 }
 
+// ---------- peças compartilhadas entre episódios ----------
+const EXEC = { pele: "#e0b08b", cabelo: "careca", corCabelo: "#b8b8c0", camisa: "#e8e8ee", calca: "#2a3550", sapato: "#1b1b1b", terno: true, gravata: "#d63c3c", oculos: true, larg: 1.1, seed: 14, s: 1.05 };
+// ---------- chaveiro premium ----------
+function chaveiroPremium(x, y, i, ang = 0, s = 1) {
+  const c = ctx; c.save(); c.translate(x, y); c.rotate(ang); c.scale(s, s);
+  c.lineWidth = 4; c.strokeStyle = "#9aa3b0"; c.beginPath(); c.arc(0, 8, 9, 0, 7); c.stroke();
+  c.beginPath(); c.moveTo(0, 17); c.lineTo(0, 32); c.stroke();
+  c.translate(0, 54);
+  const ouro = i % 3 !== 1, cor = ouro ? "#ffcf3a" : "#d6dde8", k = i % 4; let p;
+  if (k === 0) { const pts = []; for (let j = 0; j < 10; j++) { const a = -Math.PI / 2 + j * Math.PI / 5, r = j % 2 ? 11 : 25; pts.push([Math.cos(a) * r, Math.sin(a) * r]); } p = P.poly(pts); }
+  else if (k === 1) p = P.poly([[0, -24], [19, -8], [12, 20], [-12, 20], [-19, -8]]);
+  else if (k === 2) { p = new Path2D(); p.moveTo(0, 22); p.bezierCurveTo(-34, -2, -16, -28, 0, -10); p.bezierCurveTo(16, -28, 34, -2, 0, 22); }
+  else p = P.poly([[-20, 16], [-22, -14], [-10, -2], [0, -22], [10, -2], [22, -14], [20, 16]]);
+  forma(p, cor, 4); crescente(p, -5, -5, ouro ? "rgba(150,90,0,.35)" : "rgba(60,80,120,.3)");
+  c.fillStyle = "rgba(255,255,255,.75)"; c.fill(P.el(-7, -8, 5, 3, -.5));
+  if (k === 1) { c.strokeStyle = "rgba(120,80,0,.45)"; c.lineWidth = 2; c.beginPath(); c.moveTo(-19, -8); c.lineTo(19, -8); c.moveTo(0, -24); c.lineTo(-6, -8); c.lineTo(0, 20); c.moveTo(0, -24); c.lineTo(6, -8); c.lineTo(0, 20); c.stroke(); }
+  if (k === 3) { for (const px of [-12, 0, 12]) { c.fillStyle = ["#ff4f6d", "#4fc3ff", "#7be36b"][(px + 12) / 12]; c.fill(P.el(px, 6, 4, 4)); } }
+  const sp = Math.pow(Math.max(0, Math.sin(T * 3 + i * 1.7)), 6);
+  if (sp > .05) { c.globalAlpha = sp; c.fillStyle = "#fff"; c.fill(P.poly([[0, -16 * sp - 4], [3, -3], [14 * sp + 4, 0], [3, 3], [0, 16 * sp + 4], [-3, 3], [-14 * sp - 4, 0], [-3, -3]])); c.globalAlpha = 1; }
+  c.restore();
+}
+function caixaPrem(x, y, s, n) {
+  const c = ctx; c.save(); c.translate(x, y); c.scale(s, s);
+  const b = P.rr(-80, -110, 160, 110, 6); forma(b, "#2a3550"); crescente(b, -14, 0, "rgba(0,0,0,.25)");
+  forma(P.poly([[-80, -110], [-40, -140], [40, -140], [80, -110]]), "#3a4770", 5);
+  texto("PREMIUM", 0, -56, { tam: 30, cor: "#ffd23f", borda: null });
+  for (let i = 0; i < n; i++) chaveiroPremium(-70 + (i % 7) * 23, -178 + Math.floor(i / 7) * 14, i, (i % 3 - 1) * .3, .5);
+  c.restore();
+}
+function lampadaIdeia(x, y, k) {
+  if (k <= 0) return; const c = ctx; c.save(); c.translate(x, y); const s = eob(Math.min(1, k * 2.5)); c.scale(s, s);
+  c.globalCompositeOperation = "lighter"; const g = c.createRadialGradient(0, 0, 0, 0, 0, 170); g.addColorStop(0, "rgba(255,230,120,.6)"); g.addColorStop(1, "rgba(255,230,120,0)"); c.fillStyle = g; c.fillRect(-170, -170, 340, 340); c.globalCompositeOperation = "source-over";
+  c.lineWidth = 8; c.strokeStyle = "#ffd23f"; c.lineCap = "round";
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4 + T * .9; c.beginPath(); c.moveTo(Math.cos(a) * 68, Math.sin(a) * 68); c.lineTo(Math.cos(a) * 96, Math.sin(a) * 96); c.stroke(); }
+  forma(P.el(0, -6, 42, 44), "#fff3a0"); forma(P.rr(-20, 34, 40, 28, 7), "#b8b8c0");
+  c.lineWidth = 4; c.strokeStyle = "#e09a1a"; c.beginPath(); c.moveTo(-10, 30); c.lineTo(-10, 4); c.lineTo(0, 16); c.lineTo(10, 4); c.lineTo(10, 30); c.stroke();
+  c.fillStyle = "rgba(255,255,255,.7)"; c.fill(P.el(-17, -20, 8, 12, -.5));
+  c.restore();
+}
+function pasta(x, y, ang = 0) { const c = ctx; c.save(); c.translate(x, y); c.rotate(ang); forma(P.rr(-34, -24, 68, 50, 8), "#8a5a3b"); forma(P.rr(-12, -34, 24, 14, 5), "#6b3e1a", 4); forma(P.rr(-5, -4, 10, 10, 2), "#ffd23f", 3); c.restore(); }
+

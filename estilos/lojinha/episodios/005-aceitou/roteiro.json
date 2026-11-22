@@ -1,0 +1,20 @@
+{
+ "titulo": "Você aceitou a encomenda",
+ "episodio": 5,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.25,
+ "financas": "continua o ep. 2 (caixa R$ 126, lucro total R$ 76). Encomenda 100 × R$ 9 = R$ 900; custo 100 × R$ 5 = R$ 500; faltam R$ 374. Solução: sinal de 50% = R$ 450 adiantado → caixa 576 → compra R$ 500 → sobram R$ 76. Entrega: recebe os outros R$ 450 → caixa R$ 526. Lucro da encomenda 900 − 500 = R$ 400; lucro total 76 + 400 = R$ 476.",
+ "atos": [
+  {"cena": "gancho", "dura": 3.4, "narracao": {"em": 0.25, "texto": "Você aceitou a encomenda de 100 chaveiros. Só tem um problema: faltam R$ 374.", "voz_texto": "Você aceitou a encomenda de cem chaveiros. Só tem um problema: faltam trezentos e setenta e quatro reais."}},
+  {"cena": "problema", "dura": 3.6, "narracao": {"em": 0.2, "texto": "O fornecedor cobra R$ 500 e você tem só R$ 126.", "voz_texto": "O fornecedor cobra quinhentos reais e você tem só cento e vinte e seis."}},
+  {"cena": "ideia", "dura": 3.4, "narracao": {"em": 0.2, "texto": "Aí vem a ideia: pedir 50% adiantado.", "voz_texto": "Aí vem a ideia: pedir cinquenta por cento adiantado."}},
+  {"cena": "sinal", "dura": 3.6, "narracao": {"em": 0.2, "texto": "O cliente topa e paga R$ 450 na hora.", "voz_texto": "O cliente topa e paga quatrocentos e cinquenta reais na hora."}},
+  {"cena": "compra", "dura": 4.2, "narracao": {"em": 0.2, "texto": "Você compra os 100 chaveiros por R$ 500, e ainda sobram R$ 76.", "voz_texto": "Você compra os cem chaveiros por quinhentos reais, e ainda sobram setenta e seis."}},
+  {"cena": "entrega", "dura": 4.6, "narracao": {"em": 0.2, "texto": "Três dias de correria depois, entrega feita. O cliente paga os outros R$ 450.", "voz_texto": "Três dias de correria depois, entrega feita. O cliente paga os outros quatrocentos e cinquenta reais."}},
+  {"cena": "resultado", "dura": 4.0, "narracao": {"em": 0.2, "texto": "Vendeu R$ 900, gastou R$ 500. Lucro da encomenda: R$ 400.", "voz_texto": "Vendeu novecentos reais, gastou quinhentos. Lucro da encomenda: quatrocentos reais."}},
+  {"cena": "final", "dura": 4.6, "narracao": {"em": 0.2, "texto": "Agora você tem R$ 526. Abrir uma segunda loja ou uma loja online?", "voz_texto": "Agora você tem quinhentos e vinte e seis reais. Abrir uma segunda loja ou uma loja online?"}},
+  {"cena": "fim", "dura": 3.0, "narracao": {"em": 0.2, "texto": "Comenta qual e segue o perfil para o próximo episódio."}}
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "titulo": "Você abriu a loja online",
+ "episodio": 6,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "narrador",
+ "respiro": 0.25,
+ "financas": "continua o ep. 5 (caixa R$ 526). Votação: loja online 3 × 0. Site R$ 100 + 30 chaveiros × R$ 5 = R$ 150 → caixa R$ 276. 1º pedido a R$ 12: 12 − 5 (chaveiro) − 10 (frete) = −R$ 3. Preço novo R$ 22 com frete incluso: 22 − 5 − 10 = +R$ 7 por pedido. Semana: 25 pedidos = 1 × 12 + 24 × 22 = R$ 540 vendidos; custos 100 (site) + 125 (25 chaveiros) + 250 (25 fretes) = R$ 475; lucro R$ 65. Caixa: 276 + (12 − 10) + 24 × (22 − 10) = R$ 566; estoque 5 (R$ 25). Gancho: anúncio de R$ 200 ou vídeos de graça.",
+ "atos": [
+  {"cena": "gancho", "dura": 4.2, "narracao": {"em": 0.25, "texto": "A loja online venceu! Você paga R$ 100 pelo site e R$ 150 por 30 chaveiros.", "voz_texto": "A loja online venceu! Você paga cem reais pelo site e cento e cinquenta por trinta chaveiros."}},
+  {"cena": "silencio", "dura": 3.8, "narracao": {"em": 0.2, "texto": "Site no ar... e o contador de visitas marca zero."}},
+  {"cena": "ideia", "dura": 3.6, "narracao": {"em": 0.2, "texto": "Aí você grava um vídeo mostrando o produto e posta."}},
+  {"cena": "pedido", "dura": 3.6, "narracao": {"em": 0.2, "texto": "Chega o primeiro pedido! Um chaveiro por R$ 12.", "voz_texto": "Chega o primeiro pedido! Um chaveiro por doze reais."}},
+  {"cena": "frete", "dura": 4.8, "narracao": {"em": 0.2, "texto": "Só que o frete custou R$ 10 e você não cobrou. Resultado: prejuízo de R$ 3.", "voz_texto": "Só que o frete custou dez reais e você não cobrou. Resultado: prejuízo de três reais."}},
+  {"cena": "conserto", "dura": 4.6, "narracao": {"em": 0.2, "texto": "Aprendeu: põe o frete no preço. Agora é R$ 22, e sobram R$ 7 por pedido.", "voz_texto": "Aprendeu: põe o frete no preço. Agora é vinte e dois reais, e sobram sete por pedido."}},
+  {"cena": "semana", "dura": 4.4, "narracao": {"em": 0.2, "texto": "Na semana: 25 pedidos. Já descontando o site, lucro de R$ 65.", "voz_texto": "Na semana: vinte e cinco pedidos. Já descontando o site, lucro de sessenta e cinco reais."}},
+  {"cena": "final", "dura": 4.8, "narracao": {"em": 0.2, "texto": "Agora decide: R$ 200 em anúncio pago ou vídeos de graça?", "voz_texto": "Agora decide: duzentos reais em anúncio pago ou vídeos de graça?"}},
+  {"cena": "fim", "dura": 3.0, "narracao": {"em": 0.2, "texto": "Comenta qual e segue o perfil pro próximo episódio."}}
+ ]
+}

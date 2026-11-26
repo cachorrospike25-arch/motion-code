@@ -51,62 +51,70 @@ function texturas() {
   TX.torcida = ctex(512, 128, (g, w, h, r) => { g.fillStyle = '#3a4350'; g.fillRect(0, 0, w, h); for (let i = 0; i < 900; i++) { g.fillStyle = ['#e9c46a', '#e76f51', '#2a9d8f', '#f4f1de', '#264653', '#c1121f'][Math.floor(r() * 6)]; g.fillRect(r() * w, r() * h, 4, 5); } }, false);
 }
 
-// ---------- humano articulado ----------
+// ---------- humano cartoon (toon shading + contorno) ----------
+let GRAD, CONTORNO;
+function materiaisToon() {
+  const d = new Uint8Array([70, 70, 70, 255, 150, 150, 150, 255, 255, 255, 255, 255]); GRAD = new THREE.DataTexture(d, 3, 1, THREE.RGBAFormat); GRAD.minFilter = GRAD.magFilter = THREE.NearestFilter; GRAD.needsUpdate = true;
+  CONTORNO = new THREE.MeshBasicMaterial({ color: 0x1d1410, side: THREE.BackSide }); CONTORNO.onBeforeCompile = (sh) => { sh.vertexShader = sh.vertexShader.replace('#include <begin_vertex>', 'vec3 transformed = position + normal * 0.011;'); }; CONTORNO.customProgramCacheKey = () => 'contorno';
+}
+const HIP = .79;
 function humano(o = {}) {
-  const mk = (c, rough = .75, met = 0) => new THREE.MeshStandardMaterial({ color: c, roughness: rough, metalness: met });
-  const pele = mk(o.pele || '#a8704a', .6), camisa = mk(o.camisa || '#f2c100', .82), calcao = mk(o.calcao || '#1f4fa8', .82), meiao = mk(o.meiao || '#f2f2ee', .88);
-  const manga = o.mangaLonga ? mk(o.mangaLonga, .85) : camisa, calca = o.calca ? mk(o.calca, .85) : null, cab = mk(o.cabelo || '#15110f', .85), preto = mk('#161616', .5, .1), branco = mk('#f4f4f0', .5);
-  const bota = mk(o.bota || '#1b1b1b', .45, .15);
+  const toon = (c) => new THREE.MeshToonMaterial({ color: c, gradientMap: GRAD });
+  const pele = toon(o.pele || '#a2694a'), camisa = toon(o.camisa || '#f5c518'), calcao = toon(o.calcao || '#2a5bd7'), meiao = toon(o.meiao || '#f4f4f0'), cab = toon(o.cabelo || '#17120f'), preto = new THREE.MeshBasicMaterial({ color: '#17120f' }), branco = new THREE.MeshBasicMaterial({ color: '#ffffff' });
+  const manga = o.mangaLonga ? toon(o.mangaLonga) : camisa, calca = o.calca ? toon(o.calca) : null, bota = toon(o.bota || '#1c1c20'), rosto = toon(o.pele || '#a2694a');
   const R = new THREE.Group(), q = new THREE.Group(); R.add(q);
-  const add = (p, g, m, x = 0, y = 0, z = 0, sx = 1, sy = 1, sz = 1) => { const me = new THREE.Mesh(g, m); me.position.set(x, y, z); me.scale.set(sx, sy, sz); me.castShadow = true; me.receiveShadow = true; p.add(me); return me; };
-  const limb = (r, len) => { const g = new THREE.CapsuleGeometry(r, len, 4, 10); g.translate(0, -(len / 2 + r), 0); return g; };
-  add(q, new THREE.SphereGeometry(.15, 14, 10), calca || calcao, 0, 0, 0, 1.12, .82, .86);
+  const add = (p, g, m, x = 0, y = 0, z = 0, sx = 1, sy = 1, sz = 1, sem = false) => { const me = new THREE.Mesh(g, m); me.position.set(x, y, z); me.scale.set(sx, sy, sz); me.castShadow = true; me.receiveShadow = true; if (!sem && m.isMeshToonMaterial) me.add(new THREE.Mesh(g, CONTORNO)); p.add(me); return me; };
+  const limb = (r, len) => { const g = new THREE.CapsuleGeometry(r, len, 5, 14); g.translate(0, -(len / 2 + r), 0); return g; };
+  add(q, new THREE.SphereGeometry(.17, 18, 14), calca || calcao, 0, .0, 0, 1.12, .72, .9);
   const tr = new THREE.Group(); tr.position.y = .05; q.add(tr);
-  add(tr, new THREE.CapsuleGeometry(.155, .27, 4, 14), o.jaqueta ? mk(o.jaqueta, .85) : camisa, 0, .3, 0, 1.2, 1, .78);
-  add(tr, new THREE.CapsuleGeometry(.055, .06, 4, 8), pele, 0, .625, 0);
-  const cb = new THREE.Group(); cb.position.set(0, .655, 0); tr.add(cb);
-  add(cb, new THREE.SphereGeometry(.118, 22, 18), pele, 0, .12, 0, .9, 1.12, 1.0);
-  if (!o.careca) { const hr = add(cb, new THREE.SphereGeometry(.125, 24, 14, 0, Math.PI * 2, 0, Math.PI * .47), cab, 0, .137, -.016, .94, 1.12, 1.05); hr.rotation.x = -.3; for (const sd of [-1, 1]) add(cb, new THREE.BoxGeometry(.018, .06, .03), cab, sd * .1, .125, .035); }
-  for (const s of [-1, 1]) {
-    add(cb, new THREE.SphereGeometry(.026, 10, 8), branco, s * .042, .14, .096).scale.set(1, .85, .6);
-    add(cb, new THREE.SphereGeometry(.014, 8, 6), preto, s * .042, .14, .108);
-    const sb = add(cb, new THREE.BoxGeometry(.05, .01, .01), cab, s * .045, .183, .1); sb.rotation.z = s * -.12;
-    add(cb, new THREE.SphereGeometry(.028, 8, 6), pele, s * .105, .115, 0, .5, 1, .8);
+  add(tr, new THREE.CapsuleGeometry(.165, .17, 5, 16), o.jaqueta ? toon(o.jaqueta) : camisa, 0, .24, 0, 1.1, 1, .9);
+  const cb = new THREE.Group(); cb.position.set(0, .7, 0); tr.add(cb);
+  add(cb, new THREE.SphereGeometry(.205, 28, 22), rosto, 0, .02, 0, 1.0, .95, .98);
+  if (!o.careca) { const hr = add(cb, new THREE.SphereGeometry(.212, 26, 16, 0, Math.PI * 2, 0, Math.PI * .5), cab, 0, .035, -.02, 1.01, 1.0, 1.03); hr.rotation.x = -.28; add(cb, new THREE.SphereGeometry(.075, 14, 10), cab, .05, .185, .13, 1.2, .8, 1); add(cb, new THREE.SphereGeometry(.06, 14, 10), cab, -.07, .19, .1, 1.1, .8, 1); for (const sd of [-1, 1]) add(cb, new THREE.SphereGeometry(.06, 12, 8), cab, sd * .17, .02, -.02, .7, 1.1, 1); }
+  else { for (const sd of [-1, 1]) add(cb, new THREE.SphereGeometry(.05, 12, 8), toon('#a8a8a8'), sd * .19, 0, -.02, .6, 1.2, 1); }
+  const sobr = [];
+  for (const sd of [-1, 1]) {
+    add(cb, new THREE.SphereGeometry(.058, 16, 12), branco, sd * .085, .03, .172, 1, 1.18, .5, true);
+    add(cb, new THREE.SphereGeometry(.034, 14, 10), preto, sd * .085, .025, .2, 1, 1.15, .4, true);
+    add(cb, new THREE.SphereGeometry(.012, 8, 6), branco, sd * .075, .045, .222, 1, 1, .5, true);
+    const sb = add(cb, new THREE.CapsuleGeometry(.014, .06, 4, 8), cab, sd * .09, .115, .18, 1, 1, .8, true); sb.rotation.z = Math.PI / 2 + sd * .12; sobr.push(sb);
+    add(cb, new THREE.SphereGeometry(.04, 10, 8), rosto, sd * .2, -.01, 0, .6, 1, .9);
+    const bm = new THREE.Mesh(new THREE.CircleGeometry(.032, 14), new THREE.MeshBasicMaterial({ color: '#e8607a', transparent: true, opacity: .32 })); bm.position.set(sd * .125, -.06, .172); bm.lookAt(sd * .3, -.06, .6); cb.add(bm);
   }
-  add(cb, new THREE.SphereGeometry(.02, 8, 6), pele, 0, .105, .115, 1, 1.2, 1);
-  const boca = add(cb, new THREE.BoxGeometry(.05, .012, .01), mk('#3a1414', .6), 0, .062, .104);
-  if (o.oculos) { for (const s of [-1, 1]) { const a = add(cb, new THREE.TorusGeometry(.03, .004, 6, 14), preto, s * .042, .14, .112); } }
+  add(cb, new THREE.SphereGeometry(.02, 10, 8), rosto, 0, -.03, .205, 1.1, .9, .9);
+  const sorriso = add(cb, new THREE.TorusGeometry(.055, .009, 8, 20, Math.PI), preto, 0, -.065, .19, 1, 1, 1, true); sorriso.rotation.z = Math.PI;
+  const boca = add(cb, new THREE.SphereGeometry(.05, 14, 10), toon('#5a1218'), 0, -.095, .175, 1, .05, .35, true);
+  if (o.oculos) for (const sd of [-1, 1]) add(cb, new THREE.TorusGeometry(.065, .008, 8, 20), preto, sd * .085, .028, .215, 1, 1, 1, true);
   const braco = (s) => {
-    const sh = new THREE.Group(); sh.position.set(s * .23, .5, 0); tr.add(sh);
-    add(sh, new THREE.SphereGeometry(.062, 12, 10), manga); add(sh, limb(.054, .22), manga);
-    const co = new THREE.Group(); co.position.y = -.3; sh.add(co);
-    add(co, limb(.046, .21), o.mangaLonga ? manga : pele); const mao = add(co, new THREE.SphereGeometry(.05, 10, 8), pele, 0, -.3, 0, .8, 1.3, .55); add(co, new THREE.SphereGeometry(.02, 8, 6), pele, s * -.035, -.28, .03);
+    const sh = new THREE.Group(); sh.position.set(s * .2, .42, 0); tr.add(sh);
+    add(sh, new THREE.SphereGeometry(.075, 14, 10), manga); add(sh, limb(.066, .15), manga);
+    const co = new THREE.Group(); co.position.y = -.25; sh.add(co);
+    add(co, limb(.058, .13), o.mangaLonga ? manga : pele); const mao = add(co, new THREE.SphereGeometry(.07, 14, 10), pele, 0, -.21, 0, 1, 1.1, .85);
     return { sh, co, mao };
   };
   const perna = (s) => {
-    const qd = new THREE.Group(); qd.position.set(s * .095, -.02, 0); q.add(qd);
-    add(qd, limb(.088, .3), calca || pele); if (!calca) add(qd, limb(.094, .16), calcao, 0, .01);
-    const jo = new THREE.Group(); jo.position.y = -.46; qd.add(jo);
-    add(jo, limb(.062, .3), calca || pele); if (!calca) var sock = add(jo, limb(.066, .2), meiao, 0, -.1);
-    const pe = new THREE.Group(); pe.position.y = -.43; jo.add(pe);
-    add(pe, new RoundedBoxGeometry(.1, .075, .26, 2, .03), pele, 0, -.03, .06);
-    const bt = new THREE.Group(); pe.add(bt); add(bt, new RoundedBoxGeometry(.112, .09, .32, 3, .04), bota, 0, -.03, .08); add(bt, new THREE.SphereGeometry(.052, 12, 10), bota, 0, -.035, .2, 1, .8, 1.1);
-    add(bt, new RoundedBoxGeometry(.115, .016, .33, 2, .008), mk('#e8e8e8'), 0, -.082, .08); add(bt, new THREE.BoxGeometry(.05, .012, .1), mk('#d63a3a'), 0, .014, .1); bt.visible = !!o.chuteira;
-    return { qd, jo, pe, bt, sock };
+    const qd = new THREE.Group(); qd.position.set(s * .1, -.02, 0); q.add(qd);
+    add(qd, limb(.1, .19), calca || pele); if (!calca) add(qd, limb(.108, .12), calcao, 0, .015);
+    const jo = new THREE.Group(); jo.position.y = -.33; qd.add(jo);
+    add(jo, limb(.074, .2), calca || pele); if (!calca) var sock = add(jo, limb(.08, .16), meiao, 0, -.04);
+    const pe = new THREE.Group(); pe.position.y = -.33; jo.add(pe);
+    add(pe, new RoundedBoxGeometry(.13, .09, .27, 3, .04), pele, 0, -.015, .06);
+    const bt = new THREE.Group(); pe.add(bt); add(bt, new RoundedBoxGeometry(.14, .11, .34, 3, .05), bota, 0, -.015, .08); add(bt, new RoundedBoxGeometry(.145, .02, .35, 2, .01), toon('#f0f0f0'), 0, -.07, .08); bt.visible = !!o.chuteira;
+    return { qd, jo, pe, bt, sock: sock || add(jo, new THREE.BoxGeometry(.01, .01, .01), pele, 0, 0, 0, 1, 1, 1, true) };
   };
-  const H_ = { R, q, tr, cb, boca, bL: braco(-1), bR: braco(1), lL: perna(-1), lR: perna(1) };
+  const H_ = { R, q, tr, cb, boca, sorriso, sobr, bL: braco(-1), bR: braco(1), lL: perna(-1), lR: perna(1) };
   if (o.escala) R.scale.setScalar(o.escala);
   return H_;
 }
-// pose: y, pitch(inclina o corpo todo), yaw, lean(tronco), twist, hx, hy (cabeça), aL/aR: [ombro x, ombro z, cotovelo], lL/lR: [coxa x, joelho], boca
 function aplicar(h, p) {
-  h.q.position.y = .915 + (p.y || 0); h.q.rotation.set(p.pitch || 0, p.yaw || 0, p.roll || 0);
+  h.q.position.y = HIP + (p.y || 0); h.q.rotation.set(p.pitch || 0, p.yaw || 0, p.roll || 0);
   h.tr.rotation.set(p.lean || 0, p.twist || 0, 0); h.cb.rotation.set(p.hx || 0, p.hy || 0, p.hz || 0);
   const br = (b, a) => { a = a || [0, 0, 0]; b.sh.rotation.set(a[0], 0, a[1]); b.co.rotation.x = -(a[2] || 0); };
   br(h.bL, p.aL); br(h.bR, p.aR);
   const pr = (l, a) => { a = a || [0, 0]; l.qd.rotation.x = -a[0]; l.jo.rotation.x = a[1]; l.pe.rotation.x = -(a[2] || 0); };
   pr(h.lL, p.lL); pr(h.lR, p.lR);
-  h.boca.scale.set(1 + (p.sorriso || 0) * .5, .4 + (p.boca || 0) * 4, 1);
+  const ab = p.boca || 0; h.boca.scale.set(1, .05 + ab * 7, .35 + ab * 1.5); h.boca.visible = ab > .01; h.sorriso.visible = ab < .6; h.sorriso.scale.set(1 + (p.sorriso || 0) * .5, 1 + (p.sorriso || 0) * .3, 1);
+  const sbr = p.sobr || 0; h.sobr.forEach((b, i) => { b.position.y = .115 + sbr * .035; });
 }
 const PAR = { y: 0 };
 function poseParado(t, s = 0) { const b = Math.sin(t * 2.2 + s) * .004; return { y: b, lean: .02 + b, hx: Math.sin(t * .8 + s) * .03, hy: Math.sin(t * .6 + s) * .05, aL: [Math.sin(t * 1.5) * .04, .08, .1], aR: [-Math.sin(t * 1.5) * .04, -.08, .1], lL: [0, 0], lR: [0, 0] }; }
@@ -370,11 +378,11 @@ window.iniciar = async (tempo) => {
   camera = new THREE.PerspectiveCamera(35, W / H, .05, 600);
   hemi = new THREE.HemisphereLight(0xffffff, 0x6b5a45, 1); scene.add(hemi);
   sol = new THREE.DirectionalLight(0xffffff, 3); sol.castShadow = true; scene.add(sol, sol.target); sol.shadow.mapSize.set(2048, 2048); const sc = sol.shadow.camera; sc.left = -14; sc.right = 14; sc.top = 14; sc.bottom = -14; sc.near = 1; sc.far = 80; sol.shadow.bias = -.0004; sol.shadow.normalBias = .03;
-  texturas(); GRAO = ctex(256, 256, (g, w, h, r) => { const id = g.createImageData(w, h); for (let i = 0; i < id.data.length; i += 4) { const v = 128 + (r() - .5) * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } g.putImageData(id, 0, 0); }, false);
+  materiaisToon(); texturas(); GRAO = ctex(256, 256, (g, w, h, r) => { const id = g.createImageData(w, h); for (let i = 0; i < id.data.length; i += 4) { const v = 128 + (r() - .5) * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } g.putImageData(id, 0, 0); }, false);
   const dome = (tx) => { const m = new THREE.Mesh(new THREE.SphereGeometry(300, 24, 16), new THREE.MeshBasicMaterial({ map: tx, side: THREE.BackSide, fog: false })); scene.add(m); return m; }; SKY_A = dome(TX.ceuA); SKY_B = dome(TX.ceuB);
   GRUPO_A = cenaA(); GRUPO_B = cenaB(); scene.add(GRUPO_A, GRUPO_B);
-  PEDRIN = humano({ pele: '#a8704a', camisa: '#f2c100', calcao: '#1f4fa8', cabelo: '#15110f', colarinho: '#1f4fa8', chuteira: true }); scene.add(PEDRIN.R);
-  TREINADOR = humano({ pele: '#d9a47a', camisa: '#1d3557', jaqueta: '#1d3557', mangaLonga: '#1d3557', calca: '#22303f', cabelo: '#9a9a9a', careca: true, oculos: true, escala: 1.04, chuteira: true, colarinho: '#e63946' }); scene.add(TREINADOR.R);
+  PEDRIN = humano({ pele: '#9a6446', camisa: '#f5c518', calcao: '#2a5bd7', cabelo: '#17120f', chuteira: true }); scene.add(PEDRIN.R);
+  TREINADOR = humano({ pele: '#d9a47a', camisa: '#2b4a7c', jaqueta: '#2b4a7c', mangaLonga: '#2b4a7c', calca: '#2c3b52', cabelo: '#9a9a9a', careca: true, oculos: true, escala: 1.05, chuteira: true }); scene.add(TREINADOR.R);
   const prancheta = new THREE.Mesh(new THREE.BoxGeometry(.22, .3, .015), new THREE.MeshStandardMaterial({ color: '#d9c9a3', roughness: .8 })); prancheta.position.set(0, -.3, .05); prancheta.rotation.x = -.2; TREINADOR.bL.co.add(prancheta);
   BOLA_MEIA = bolaMesh('meia'); BOLA = bolaMesh('meia'); scene.add(BOLA); CEL = celular(); scene.add(CEL);
   MOCHILA = new THREE.Mesh(new RoundedBoxGeometry(.3, .38, .16, 3, .04), new THREE.MeshStandardMaterial({ color: '#2a5d9f', roughness: .8 })); MOCHILA.castShadow = true; scene.add(MOCHILA);

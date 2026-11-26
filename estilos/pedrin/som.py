@@ -59,15 +59,11 @@ def soma(buf, a, s, g=1.0):
     buf[i:i + m] += s[:m] * g
 
 
-def pluck(f, d=1.4, g=1.0):  # violão (Karplus-Strong)
+def pluck(f, d=1.4, g=1.0):  # violão: harmônicos que decaem (síntese aditiva, rápida)
     n = int(d * SR)
-    p = int(SR / f)
-    b = rng.uniform(-1, 1, p)
-    out = np.zeros(n)
-    for i in range(n):
-        out[i] = b[i % p]
-        b[i % p] = .4985 * (b[i % p] + b[(i + 1) % p])
-    return out * np.exp(-np.arange(n) / SR * 1.2) * g
+    tt = np.arange(n) / SR
+    out = sum(np.sin(2 * np.pi * f * k * tt + k) * np.exp(-tt * (1.3 + k * .9)) / k ** 1.1 for k in range(1, 9))
+    return out * np.minimum(1, tt / .004) * g
 
 
 def pad(fs, d, g=1.0):

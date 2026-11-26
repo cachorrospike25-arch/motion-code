@@ -14,7 +14,7 @@ Série de Reels, TikTok e Shorts com a carreira de um jogador de futebol, **deci
 ## Visual
 
 - Pedrin (17 anos, ~1,72 m): pele morena, cabelo preto curto, camisa amarela, calção azul. **Descalço, bola de meia e chinelos de trave** na rua; chuteira emprestada (dois números maior) no clube. A camisa **ainda não tem número** (o número será votado).
-- Humano articulado montado em primitivas (cabeça, tronco, braços e pernas com juntas), poses em código (andar, correr, chutar, tocar a bola, comemorar, falar). Luz de fim de tarde na rua; manhã clara no clube (grama listrada, torcida, refletores). Realismo limitado ao que o código dá: proporções humanas, sombra, luz, texturas; não é fotorrealista.
+- **3D cartoon (decidido em 26/11/2026, depois que o primeiro visual "realista" ficou com cara de manequim):** humano articulado com cabeça grande, olhos expressivos, mãos e pés arredondados, sombreado toon (3 tons) e contorno escuro; poses em código (andar, correr, chutar, tocar a bola, comemorar, falar). Cenário com texturas e luz de fim de tarde na rua e manhã clara no clube. Não é fotorrealista.
 - Câmeras **relativas ao Pedrin** (`R(...)` em `tomadas()`), cortes rápidos com flash branco, tremido leve nos planos de tensão.
 - Telas na imagem: título, lower third, celular (WhatsApp), quadro tático com as três posições, convite para comentar.
 

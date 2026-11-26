@@ -227,11 +227,11 @@ function tomadas() {
     R('treinador', 0, 1.8, [-1.3, 1.62, 1.5], [1.8, 1.55, -.7], [-1.1, 1.6, 1.3], [1.8, 1.55, -.7], 34),
     R('treinador', 1.8, 3.2, [3.4, 1.62, -2.1], [0, 1.55, 0], [3.2, 1.62, -1.8], [0, 1.55, 0], 30),
     R('treinador', 3.2, 5.3, [.7, 1.66, .55], [1.8, 1.68, -.7], [.8, 1.67, .4], [1.8, 1.68, -.7], 28, 25),
-    R('treinador', 5.3, D('treinador'), [1.1, 1.55, 1.5], [0, 1.52, 0], [.5, 1.55, .85], [0, 1.52, 0], 34, 26, .004),
-    R('pergunta', 0, 4.0, [0, 1.52, 2.25], [0, 1.5, 0], [0, 1.52, 2.0], [0, 1.5, 0], 30, 29),
-    R('pergunta', 4.0, 8.6, [.5, 1.45, 2.3], [0, 1.45, 0], [-.5, 1.48, 2.1], [0, 1.45, 0], 31, 30),
-    R('pergunta', 8.6, D('pergunta'), [0, 1.5, 2.1], [0, 1.5, 0], [0, 1.52, 1.85], [0, 1.5, 0], 29, 28),
-    R('fim', 0, D('fim'), [0, 1.45, 2.8], [0, 1.4, 0], [0, 1.4, 2.4], [0, 1.4, 0], 36, 34),
+    R('treinador', 5.3, D('treinador'), [1.5, 1.5, 2.3], [0, 1.45, 0], [.9, 1.5, 1.6], [0, 1.45, 0], 34, 28, .004),
+    R('pergunta', 0, 4.0, [0, 1.5, 3.3], [0, 1.4, 0], [0, 1.5, 3.0], [0, 1.4, 0], 30, 29),
+    R('pergunta', 4.0, 8.6, [.8, 1.4, 3.4], [0, 1.35, 0], [-.8, 1.45, 3.2], [0, 1.35, 0], 31, 30),
+    R('pergunta', 8.6, D('pergunta'), [0, 1.45, 3.1], [0, 1.4, 0], [0, 1.45, 2.8], [0, 1.4, 0], 29, 28),
+    R('fim', 0, D('fim'), [0, 1.4, 3.8], [0, 1.3, 0], [0, 1.4, 3.4], [0, 1.3, 0], 36, 34),
   ];
 }
 let CORTES;
@@ -340,7 +340,7 @@ function lowerThird(t) {
   g.fillStyle = '#ffd23a'; g.font = '800 28px Inter'; g.fillText('AVALIAÇÃO · AURORA FC', 96, 398); g.fillStyle = '#fff'; g.font = '900 44px Inter'; g.fillText('SÁBADO · 8H DA MANHÃ', 96, 446); g.restore();
 }
 function quadroTatico(t) {
-  const a = F0('pergunta') + (F1('pergunta') - F0('pergunta')) * .38, k = lin(t, a, a + .5) * (1 - lin(t, A0('fim') - .2, A0('fim') + .2)); if (k <= 0) return; const g = ctx; g.save(); g.globalAlpha = sm(k); g.translate(540, 520); const s = eob(Math.min(1, k)); g.scale(s, s);
+  const a = F0('pergunta') + (F1('pergunta') - F0('pergunta')) * .38, k = lin(t, a, a + .5) * (1 - lin(t, A0('fim') - .2, A0('fim') + .2)); if (k <= 0) return; const g = ctx; g.save(); g.globalAlpha = sm(k); g.translate(540, 300); const s = eob(Math.min(1, k)) * .74; g.scale(s, s);
   rr(g, -420, -250, 840, 520, 34); g.fillStyle = 'rgba(8,16,12,.86)'; g.fill(); g.strokeStyle = 'rgba(255,255,255,.18)'; g.lineWidth = 3; g.stroke();
   g.textAlign = 'center'; g.fillStyle = '#ffd23a'; g.font = '900 38px Inter'; g.fillText('EM QUAL POSIÇÃO O PEDRIN JOGA?', 0, -205);
   // campo visto de cima (ataque para o topo)
@@ -351,7 +351,7 @@ function quadroTatico(t) {
   const op = [['1', 'PONTA DIREITA', '#e63946', t1], ['2', 'PONTA ESQUERDA', '#3a86ff', t2], ['3', 'CENTROAVANTE', '#ffd23a', t3]];
   op.forEach(([n, nome, cor, tt], i) => { const on = t >= tt && t < tt + 1.4, y = -120 + i * 120; g.save(); g.translate(150, y); const p = on ? 1.06 : 1; g.scale(p, p); rr(g, -150, -42, 300, 84, 22); g.fillStyle = on ? cor : 'rgba(255,255,255,.1)'; g.fill(); g.strokeStyle = cor; g.lineWidth = 4; g.stroke(); g.fillStyle = on && i === 2 ? '#111' : '#fff'; g.font = '900 30px Inter'; g.textAlign = 'center'; g.fillText(`${n} · ${nome}`, 0, 11); g.restore(); });
   g.restore();
-  const kc = lin(t, a + 1.5, a + 2.0) * (1 - lin(t, A0('fim') - .2, A0('fim') + .2)); if (kc > 0) { g.save(); g.globalAlpha = kc; g.textAlign = 'center'; g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 16; g.font = '900 58px Inter'; g.fillStyle = '#fff'; g.fillText('COMENTA 1, 2 OU 3', 540, 880); g.font = '800 38px Inter'; g.fillStyle = '#ffd23a'; g.fillText('A DECISÃO É SUA!', 540, 940); g.restore(); }
+  const kc = lin(t, a + 1.5, a + 2.0) * (1 - lin(t, A0('fim') - .2, A0('fim') + .2)); if (kc > 0) { g.save(); g.globalAlpha = kc; g.textAlign = 'center'; g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 16; g.font = '900 58px Inter'; g.fillStyle = '#fff'; g.fillText('COMENTA 1, 2 OU 3', 540, 1250); g.font = '800 38px Inter'; g.fillStyle = '#ffd23a'; g.fillText('A DECISÃO É SUA!', 540, 1312); g.restore(); }
 }
 function fimCartao(t) {
   const k = lin(t, A0('fim') + .15, A0('fim') + .5); if (k <= 0) return; const g = ctx; g.save(); g.translate(540, 760); const pu = 1 + .04 * Math.sin(t * 8), sc = eob(k) * pu; g.scale(sc, sc);

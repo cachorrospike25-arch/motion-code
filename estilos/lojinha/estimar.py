@@ -9,7 +9,7 @@ t, atos = 0.0, []
 for a in r["atos"]:
     n = a.get("narracao"); fala = None
     if n:
-        t0 = t + n.get("em", .4); t1 = t0 + len(n["texto"].split()) / 2.75
+        t0 = t + n.get("em", .4); t1 = t0 + len(n["texto"].split()) / r.get("palavras_por_segundo", 2.75)
         fala = dict(t0=round(t0, 3), t1=round(t1, 3), texto=n["texto"])
     dura = max(a["dura"], (fala["t1"] - t + r.get("respiro", .3)) if fala else 0)
     atos.append(dict(cena=a["cena"], entrada=None, t0=round(t, 3), t1=round(t + dura, 3), fala=fala)); t += dura

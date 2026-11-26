@@ -1,0 +1,21 @@
+{
+ "titulo": "O sonho do Pedrin",
+ "estilo": "rabisco",
+ "formato": "9:16",
+ "fps": 24,
+ "voz": "claude",
+ "palavras_por_segundo": 2.3,
+ "tema": "um menino sem chuteira nem campo treina todo dia com bola de meia; um vizinho dá uma bola de verdade; quem treina todo dia já é jogador. Fecha pedindo para mandar a quem sonha e seguir o perfil.",
+ "atos": [
+  {"cena": "pedrinApresenta", "dura": 3.2, "musica": "leve", "direcao_cena": "papel. Pedrin se desenha no centro, descalço, com uma bola de meia ao lado.", "narracao": {"texto": "Ah, esse é o Pedrin.", "direcao": "carinhosa, como quem apresenta alguém querido", "em": 0.5}},
+  {"cena": "pedrinSonho", "dura": 3.6, "musica": "leve", "direcao_cena": "papel. Balões de pensamento sobem até uma nuvem: ele de camisa amarela em campo.", "narracao": {"texto": "O sonho dele é ser jogador.", "direcao": "suave, com um sorriso", "em": 0.5}},
+  {"cena": "pedrinSemNada", "dura": 3.8, "musica": "leve", "direcao_cena": "papel. Uma chuteira e um campo aparecem e são riscados de vermelho.", "narracao": {"texto": "Não tem chuteira. Nem campo.", "direcao": "baixa, sem drama, uma pausa entre as duas", "em": 0.5}},
+  {"cena": "pedrinTrave", "dura": 4.2, "musica": "leve", "direcao_cena": "papel. Dois chinelos fazem de trave; ele chuta uma bola de meia.", "narracao": {"texto": "A trave é de chinelo. A bola, de meia.", "direcao": "com ternura, um quase sorriso", "em": 0.5}},
+  {"cena": "pedrinChuva", "dura": 4.4, "musica": "noite", "direcao_cena": "pinceladas trazem a noite. Chove em riscos de giz claro; ele continua chutando.", "narracao": {"texto": "Ele treina todo dia. Até na chuva.", "direcao": "firme e quente, orgulho contido", "em": 1.3}},
+  {"cena": "pedrinVizinho", "dura": 5.0, "musica": "leve", "direcao_cena": "pinceladas de volta ao papel. Um vizinho entrega uma bola de verdade.", "narracao": {"texto": "Um dia, o vizinho vê. E traz uma bola de verdade.", "direcao": "leve, surpresa boa", "em": 1.3}},
+  {"cena": "pedrinAbraco", "dura": 4.2, "musica": "cresce", "direcao_cena": "papel. Pedrin abraça a bola; estrelinhas de giz; a faísca acende.", "narracao": {"texto": "Pedrin não diz nada. Só abraça.", "direcao": "quase sussurro, emocionada", "em": 0.6}},
+  {"cena": "pedrinDuvida", "dura": 4.2, "musica": "silencio", "direcao_cena": "papel. Uma estrada comprida até um estádio no horizonte; ele pequeno caminha com a bola.", "narracao": {"texto": "Ninguém sabe se ele chega lá.", "direcao": "devagar, verdadeira, sem consolar", "em": 0.6}},
+  {"cena": "pedrinJogador", "dura": 4.8, "musica": "cresce", "direcao_cena": "pinceladas trazem o amanhecer. Ele de braços abertos sob o sol; a faísca acende com raios.", "narracao": {"texto": "Mas quem treina todo dia... já é jogador.", "direcao": "a virada: quente, crescendo, sorriso", "em": 1.5}},
+  {"cena": "pedrinFim", "dura": 5.2, "musica": "fim", "direcao_cena": "papel. Ele comemora; um aviãozinho de papel e um botão de seguir se desenham.", "narracao": {"texto": "Manda pra quem sonha. E segue o perfil.", "direcao": "carinhosa, convite simples", "em": 1.4}}
+ ]
+}

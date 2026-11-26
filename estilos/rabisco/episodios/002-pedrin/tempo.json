@@ -1,0 +1,117 @@
+{
+ "fps": 24,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "pedrinApresenta",
+   "entrada": null,
+   "t0": 0.0,
+   "t1": 3.2,
+   "fala": {
+    "t0": 0.5,
+    "t1": 2.674,
+    "texto": "Ah, esse é o Pedrin."
+   }
+  },
+  {
+   "cena": "pedrinSonho",
+   "entrada": null,
+   "t0": 3.2,
+   "t1": 6.8,
+   "fala": {
+    "t0": 3.7,
+    "t1": 6.309,
+    "texto": "O sonho dele é ser jogador."
+   }
+  },
+  {
+   "cena": "pedrinSemNada",
+   "entrada": null,
+   "t0": 6.8,
+   "t1": 10.6,
+   "fala": {
+    "t0": 7.3,
+    "t1": 9.474,
+    "texto": "Não tem chuteira. Nem campo."
+   }
+  },
+  {
+   "cena": "pedrinTrave",
+   "entrada": null,
+   "t0": 10.6,
+   "t1": 15.313,
+   "fala": {
+    "t0": 11.1,
+    "t1": 15.013,
+    "texto": "A trave é de chinelo. A bola, de meia."
+   }
+  },
+  {
+   "cena": "pedrinChuva",
+   "entrada": null,
+   "t0": 15.313,
+   "t1": 19.956,
+   "fala": {
+    "t0": 16.613,
+    "t1": 19.656,
+    "texto": "Ele treina todo dia. Até na chuva."
+   }
+  },
+  {
+   "cena": "pedrinVizinho",
+   "entrada": null,
+   "t0": 19.956,
+   "t1": 26.339,
+   "fala": {
+    "t0": 21.256,
+    "t1": 26.039,
+    "texto": "Um dia, o vizinho vê. E traz uma bola de verdade."
+   }
+  },
+  {
+   "cena": "pedrinAbraco",
+   "entrada": null,
+   "t0": 26.339,
+   "t1": 30.539,
+   "fala": {
+    "t0": 26.939,
+    "t1": 29.548,
+    "texto": "Pedrin não diz nada. Só abraça."
+   }
+  },
+  {
+   "cena": "pedrinDuvida",
+   "entrada": null,
+   "t0": 30.539,
+   "t1": 34.739,
+   "fala": {
+    "t0": 31.139,
+    "t1": 33.748,
+    "texto": "Ninguém sabe se ele chega lá."
+   }
+  },
+  {
+   "cena": "pedrinJogador",
+   "entrada": null,
+   "t0": 34.739,
+   "t1": 40.017,
+   "fala": {
+    "t0": 36.239,
+    "t1": 39.717,
+    "texto": "Mas quem treina todo dia... já é jogador."
+   }
+  },
+  {
+   "cena": "pedrinFim",
+   "entrada": null,
+   "t0": 40.017,
+   "t1": 45.217,
+   "fala": {
+    "t0": 41.417,
+    "t1": 44.895,
+    "texto": "Manda pra quem sonha. E segue o perfil."
+   }
+  }
+ ],
+ "total": 45.217
+}

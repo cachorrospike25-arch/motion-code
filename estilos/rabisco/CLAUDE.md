@@ -10,6 +10,7 @@ Motor criado em 20/10/2026 a partir da referência abaixo; estilo aprovado pelo 
 |---|---|---|
 | `000-teste` | teste do motor (20/10/2026): 4 atos, 20 s, 9:16 | nenhum (só teste) |
 | `001-a-lista` | **entregue em 9:16 e 16:9** (20/10/2026, 9:16 aprovado): 12 atos, 52,4 s, com trilha e efeitos, em `prontos/rabisco/` (`-16x9`) | Macks ver o 16:9; 1:1 |
+| `002-pedrin` | **entregue em 9:16 sem narração** (26/11/2026): 10 atos, 45,2 s, história emocionante do menino que sonha ser jogador, cenas em `motor/cenas-pedrin.js`, fecha pedindo para mandar a quem sonha e seguir o perfil; voz do Fish recusada (401), o som sai só com trilha e efeitos | voz; 1:1 e 16:9 |
 
 ## Referência
 

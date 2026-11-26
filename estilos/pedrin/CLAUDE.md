@@ -32,4 +32,4 @@ python3 som.py episodios/<slug> [--sem-voz]                       # trilha, efei
 
 | Nº | Título | Decisão | Estado |
 |---|---|---|---|
-| 001 | O COMEÇO DE UM SONHO | posição: ponta direita, ponta esquerda ou centroavante | renderizado em 26/11/2026, sem narração (voz do Fish recusada, 401); aguardando publicação e votação |
+| 001 | O COMEÇO DE UM SONHO | posição: ponta direita, ponta esquerda ou centroavante | entregue em 26/11/2026 em 9:16 (49,7 s), 3D cartoon, sem narração (voz do Fish recusada, 401); aguardando publicação e a votação real da posição |

@@ -1,0 +1,22 @@
+{
+ "titulo": "PEDRIN — O COMEÇO DE UM SONHO",
+ "serie": "PEDRIN",
+ "episodio": 1,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "pedrin (masculina, jovem, brasileira)",
+ "respiro": 0.2,
+ "palavras_por_segundo": 3.0,
+ "decisao": "Em qual posição o Pedrin deve jogar? Ponta direita, ponta esquerda ou centroavante (comentários).",
+ "atos": [
+  {"cena": "gancho", "dura": 5.8, "narracao": {"em": 0.3, "texto": "Eu sou o Pedrin. E desde pequeno eu só penso numa coisa: ser jogador de futebol."}},
+  {"cena": "treino", "dura": 3.8, "narracao": {"em": 0.15, "texto": "Eu treino todo dia. Na rua de terra, com chinelo de trave."}},
+  {"cena": "celular", "dura": 2.4, "narracao": {"em": 0.15, "texto": "Até que um dia... meu celular toca."}},
+  {"cena": "chamado", "dura": 4.6, "narracao": {"em": 0.15, "texto": "Era um olheiro do Aurora FC. Eu fui chamado pra uma avaliação!"}},
+  {"cena": "clube", "dura": 5.0, "narracao": {"em": 0.15, "texto": "Sábado, sete da manhã. Eu nunca tinha visto um campo tão bonito."}},
+  {"cena": "chuteira", "dura": 3.8, "narracao": {"em": 0.15, "texto": "Só que a chuteira era emprestada... e dois números maior."}},
+  {"cena": "treinador", "dura": 7.4, "narracao": {"em": 0.15, "texto": "Aí o treinador chega e diz: garoto, eu só tenho dez minutos pra te ver. Qual é a sua posição? E eu travei."}},
+  {"cena": "pergunta", "dura": 12.4, "narracao": {"em": 0.25, "texto": "Rapaziada, chegou a hora de começar minha carreira! Mas preciso da ajuda de vocês. Em qual posição eu devo jogar? Ponta direita, ponta esquerda ou centroavante? Comentem aí! A decisão é de vocês!"}},
+  {"cena": "fim", "dura": 3.0, "narracao": {"em": 0.2, "texto": "Segue o perfil pra ver o episódio 2."}}
+ ]
+}

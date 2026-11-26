@@ -1,0 +1,107 @@
+{
+ "fps": 30,
+ "formato": "9:16",
+ "atos": [
+  {
+   "cena": "gancho",
+   "entrada": null,
+   "t0": 0.0,
+   "t1": 5.833,
+   "fala": {
+    "t0": 0.3,
+    "t1": 5.633,
+    "texto": "Eu sou o Pedrin. E desde pequeno eu só penso numa coisa: ser jogador de futebol."
+   }
+  },
+  {
+   "cena": "treino",
+   "entrada": null,
+   "t0": 5.833,
+   "t1": 10.183,
+   "fala": {
+    "t0": 5.983,
+    "t1": 9.983,
+    "texto": "Eu treino todo dia. Na rua de terra, com chinelo de trave."
+   }
+  },
+  {
+   "cena": "celular",
+   "entrada": null,
+   "t0": 10.183,
+   "t1": 12.866,
+   "fala": {
+    "t0": 10.333,
+    "t1": 12.666,
+    "texto": "Até que um dia... meu celular toca."
+   }
+  },
+  {
+   "cena": "chamado",
+   "entrada": null,
+   "t0": 12.866,
+   "t1": 17.466,
+   "fala": {
+    "t0": 13.016,
+    "t1": 17.016,
+    "texto": "Era um olheiro do Aurora FC. Eu fui chamado pra uma avaliação!"
+   }
+  },
+  {
+   "cena": "clube",
+   "entrada": null,
+   "t0": 17.466,
+   "t1": 22.466,
+   "fala": {
+    "t0": 17.616,
+    "t1": 21.616,
+    "texto": "Sábado, sete da manhã. Eu nunca tinha visto um campo tão bonito."
+   }
+  },
+  {
+   "cena": "chuteira",
+   "entrada": null,
+   "t0": 22.466,
+   "t1": 26.266,
+   "fala": {
+    "t0": 22.616,
+    "t1": 25.949,
+    "texto": "Só que a chuteira era emprestada... e dois números maior."
+   }
+  },
+  {
+   "cena": "treinador",
+   "entrada": null,
+   "t0": 26.266,
+   "t1": 34.283,
+   "fala": {
+    "t0": 26.416,
+    "t1": 34.083,
+    "texto": "Aí o treinador chega e diz: garoto, eu só tenho dez minutos pra te ver. Qual é a sua posição? E eu travei."
+   }
+  },
+  {
+   "cena": "pergunta",
+   "entrada": null,
+   "t0": 34.283,
+   "t1": 46.683,
+   "fala": {
+    "t0": 34.533,
+    "t1": 45.533,
+    "texto": "Rapaziada, chegou a hora de começar minha carreira! Mas preciso da ajuda de vocês. Em qual posição eu devo jogar? Ponta direita, ponta esquerda ou centroavante? Comentem aí! A decisão é de vocês!"
+   }
+  },
+  {
+   "cena": "fim",
+   "entrada": null,
+   "t0": 46.683,
+   "t1": 49.75,
+   "fala": {
+    "t0": 46.883,
+    "t1": 49.55,
+    "texto": "Segue o perfil pra ver o episódio 2."
+   }
+  }
+ ],
+ "total": 49.75,
+ "episodio": 1
+}

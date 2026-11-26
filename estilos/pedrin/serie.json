@@ -1,0 +1,30 @@
+{
+ "serie": "PEDRIN",
+ "subtitulo": "A trajetória de um jogador, decidida pelos seguidores",
+ "personagem": {
+  "nome": "Pedrin",
+  "idade": "17 anos (começo da série)",
+  "aparencia": "pele morena, cabelo preto curto, ~1,72 m, magro e atlético; camisa amarela, calção azul, meião branco; no começo joga descalço, com bola de meia e chinelos de trave",
+  "personalidade": "ambicioso, competitivo, humilde e determinado; fala direto com os seguidores, reage às decisões deles, faz piada de si mesmo",
+  "voz": "masculina, jovem, brasileira, natural e divertida (a narração é o próprio Pedrin em primeira pessoa)"
+ },
+ "regras": [
+  "Cada episódio termina com uma decisão para os seguidores (comentários ou enquete).",
+  "A escolha vencedora muda de verdade o episódio seguinte.",
+  "Nunca inventar resultado de votação: o episódio seguinte só é produzido depois de a contagem real de comentários.",
+  "Cada episódio continua exatamente de onde o anterior terminou; aparência, voz, roupas e tom ficam iguais.",
+  "Todo episódio fecha pedindo para seguir o perfil.",
+  "Clube e jogadores são fictícios (Aurora FC); sem marcas ou clubes reais."
+ ],
+ "estado": {
+  "ultimo_episodio": 1,
+  "clube": "Aurora FC (avaliação/peneira)",
+  "posicao": null,
+  "numero": null,
+  "dinheiro": 0,
+  "pendente": "VOTAÇÃO DO EP. 1: em qual posição Pedrin deve jogar? (ponta direita, ponta esquerda ou centroavante). Resultado: ainda sem votos contados."
+ },
+ "episodios": [
+  {"n": 1, "titulo": "O COMEÇO DE UM SONHO", "decisao": "posição", "opcoes": ["Ponta direita", "Ponta esquerda", "Centroavante"], "resultado": null}
+ ]
+}

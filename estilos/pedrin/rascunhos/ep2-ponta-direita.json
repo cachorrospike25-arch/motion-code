@@ -1,0 +1,85 @@
+{
+ "titulo": "PEDRIN — EP. 2 (Ponta direita)",
+ "serie": "PEDRIN",
+ "episodio": 2,
+ "formato": "9:16",
+ "fps": 30,
+ "voz": "pedrin (masculina, jovem, brasileira)",
+ "respiro": 0.2,
+ "palavras_por_segundo": 3.0,
+ "rascunho": true,
+ "condicao": "SÓ PRODUZIR se a votação real do ep. 1 apontar 'Ponta direita'. Substituir o recap pela contagem real (nº de votos).",
+ "decisao": "Qual número Pedrin usa na camisa (7, 11 ou 17)?",
+ "opcoes_decisao": [
+  "7",
+  "11",
+  "17"
+ ],
+ "reviravolta": "a chuteira emprestada sai no meio da jogada e ele termina descalço, como na rua",
+ "atos": [
+  {
+   "cena": "recap",
+   "dura": 5.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Lembram que o treinador perguntou a minha posição? Vocês votaram: ponta direita! Então bora."
+   }
+  },
+  {
+   "cena": "posicao",
+   "dura": 4.6,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Ele me colocou na direita, de frente pro Marcão, um zagueiro enorme que ninguém passa."
+   }
+  },
+  {
+   "cena": "jogada",
+   "dura": 5.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Primeira bola: eu acelero, ele vem... eu enfio a bola de um lado e passo do outro!"
+   }
+  },
+  {
+   "cena": "imprevisto",
+   "dura": 5.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Só que, no meio da corrida, a chuteira de dois números maior sai voando. Ficou lá, no meio do campo."
+   }
+  },
+  {
+   "cena": "virada",
+   "dura": 6.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "E eu? Tiro a outra e jogo descalço, igualzinho na rua. Cruzo na cabeça do garoto da frente: gol!"
+   }
+  },
+  {
+   "cena": "treinador",
+   "dura": 5.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "O treinador apita e diz: descalço, mas é jogador. Agora escolhe a sua camisa."
+   }
+  },
+  {
+   "cena": "pergunta",
+   "dura": 10.4,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Rapaziada, o treinador quer me dar uma camisa! Mas qual número eu devo usar? O sete, o onze ou o dezessete? Comentem aí! A decisão é de vocês!"
+   }
+  },
+  {
+   "cena": "fim",
+   "dura": 3.0,
+   "narracao": {
+    "em": 0.2,
+    "texto": "Segue o perfil pra ver o episódio 3."
+   }
+  }
+ ]
+}

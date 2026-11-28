@@ -22,24 +22,9 @@
   "posicao": null,
   "numero": null,
   "dinheiro": 0,
-  "pendente": "VOTAÇÃO DO EP. 1 (posição: ponta direita, ponta esquerda ou centroavante): o ep. 1 ainda não foi publicado; sem votos contados. Roteiros do ep. 2 prontos para cada resultado.",
-  "rascunhos_ep2": [
-   "rascunhos/ep2-ponta-direita.json",
-   "rascunhos/ep2-ponta-esquerda.json",
-   "rascunhos/ep2-centroavante.json"
-  ]
+  "pendente": "VOTAÇÃO DO EP. 1: em qual posição Pedrin deve jogar? (ponta direita, ponta esquerda ou centroavante). Resultado: ainda sem votos contados."
  },
  "episodios": [
-  {
-   "n": 1,
-   "titulo": "O COMEÇO DE UM SONHO",
-   "decisao": "posição",
-   "opcoes": [
-    "Ponta direita",
-    "Ponta esquerda",
-    "Centroavante"
-   ],
-   "resultado": null
-  }
+  {"n": 1, "titulo": "O COMEÇO DE UM SONHO", "decisao": "posição", "opcoes": ["Ponta direita", "Ponta esquerda", "Centroavante"], "resultado": null}
  ]
 }
